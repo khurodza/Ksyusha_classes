@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ksyusha's Homework</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="site-title" href="index.html" style="text-decoration:none;">Ksyusha's English Lessons</a>
+  <nav class="topnav">
+    <a class="btn small secondary" href="index.html">&larr; Home</a>
+  </nav>
+  <div class="greeting" id="greeting"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Homework</h1>
+    <p>Homework tasks appear here after each lesson. Your answers are saved automatically, just like in the lessons.</p>
+  </div>
+
+  <!-- ============================================================
+       HOMEWORK LIST
+       Same pattern as index.html's lesson-list: copy a
+       .lesson-card block for each new homework assignment,
+       linking to homework/hw-XX.html.
+       ============================================================ -->
+  <div class="lesson-list">
+
+    <div class="lesson-card theme-sky">
+      <div>
+        <span class="tag">Homework 01</span>
+        <p class="meta">Follows Lesson 01 &middot; Unit 2A follow-up</p>
+        <h3>Practice: past simple vs. past continuous</h3>
+      </div>
+      <a class="btn" href="homework/hw-01.html">Open homework</a>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  KL.initHomePage();
+</script>
+</body>
+</html>

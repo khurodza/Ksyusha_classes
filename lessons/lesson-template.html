@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ★ 1. Set the browser tab title -->
+<title>Lesson XX — Topic Here</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="site-title" href="../index.html" style="text-decoration:none;">Ksyusha's English Lessons</a>
+  <nav class="topnav">
+    <a class="btn small secondary" href="../index.html">&larr; Home</a>
+    <a href="../homework.html">Homework</a>
+  </nav>
+  <div class="greeting" id="greeting"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <!-- ★ 2. Lesson heading + short intro -->
+    <h1>Lesson XX — Topic Here</h1>
+    <p>One or two sentences telling Ksyusha what today's lesson is about.</p>
+  </div>
+
+  <!-- ============================================================
+       KEY VOCABULARY (scaffolding)
+       Since the textbook (A2+) sits slightly above her level,
+       use this box to pre-teach 3–6 new words/phrases before
+       the exercises. Delete the box if a lesson doesn't need it.
+       ============================================================ -->
+  <div class="section">
+    <h2>Key words for today</h2>
+    <div class="instructions">New vocabulary before we start:</div>
+    <!-- ★ 3. Replace with your vocabulary list -->
+    <ul>
+      <li><strong>word</strong> — simple definition or translation</li>
+      <li><strong>word</strong> — simple definition or translation</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       VIDEO
+       Paste a YouTube (or other) embed URL into the iframe src.
+       ============================================================ -->
+  <div class="section">
+    <h2>Watch</h2>
+    <div class="instructions">Watch the video, then answer the questions below.</div>
+    <div class="embed-frame">
+      <!-- ★ 4. Replace src with your YouTube embed link -->
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+              title="Lesson video" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FILL IN THE BLANK
+       Give every <input> a unique id (unique within this lesson).
+       data-save + id is all that's needed — script.js autosaves
+       and restores the value automatically.
+       ============================================================ -->
+  <div class="section">
+    <h2>Fill in the blanks</h2>
+    <div class="instructions">Complete the sentences with the correct word.</div>
+
+    <!-- ★ 5. Replace with your own sentences / blanks -->
+    <p class="blank-line">
+      1. She usually <input type="text" id="blank-1" data-save size="10"> to school by bus.
+    </p>
+    <p class="blank-line">
+      2. I <input type="text" id="blank-2" data-save size="10"> football every weekend.
+    </p>
+  </div>
+
+  <!-- ============================================================
+       MATCHING (words ↔ pictures / definitions)
+       - Wrap the two columns in a .match-grid with a unique
+         data-match-id (unique within this lesson).
+       - Each pair of items shares the same data-match value.
+       - data-col must differ between the two columns (e.g. "a"/"b")
+         so a word can't be matched to another word by mistake.
+       - Use <img> for pictures, or plain text for definitions.
+       ============================================================ -->
+  <div class="section">
+    <h2>Match the words to the pictures</h2>
+    <div class="instructions">Click a word, then click the picture (or definition) it matches.</div>
+
+    <!-- ★ 6. Replace items — keep matching data-match values paired -->
+    <div class="match-grid" data-match-id="set1">
+      <div class="match-col">
+        <div class="match-item" data-match="1" data-col="a">word one</div>
+        <div class="match-item" data-match="2" data-col="a">word two</div>
+        <div class="match-item" data-match="3" data-col="a">word three</div>
+      </div>
+      <div class="match-col">
+        <!-- swap for <img src="..." alt="..."> to match against pictures -->
+        <div class="match-item" data-match="2" data-col="b">definition / picture for word two</div>
+        <div class="match-item" data-match="1" data-col="b">definition / picture for word one</div>
+        <div class="match-item" data-match="3" data-col="b">definition / picture for word three</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       WORDWALL GAME
+       Paste the Wordwall "embed" iframe code — just replace the
+       src below with the one Wordwall gives you (Share > Embed).
+       ============================================================ -->
+  <div class="section">
+    <h2>Practice game</h2>
+    <div class="instructions">Play the game to practice today's vocabulary.</div>
+    <div class="embed-frame" style="padding-top:75%;">
+      <!-- ★ 7. Replace src with your Wordwall embed link -->
+      <iframe src="https://wordwall.net/embed/PASTE_YOUR_EMBED_ID_HERE"
+              title="Wordwall game"></iframe>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       AUDIO
+       Point src at a local audio file (e.g. audio/lesson-XX.mp3)
+       or a hosted link.
+       ============================================================ -->
+  <div class="section">
+    <h2>Listen</h2>
+    <div class="instructions">Listen to the recording, then discuss it together.</div>
+    <!-- ★ 8. Replace src with your audio file -->
+    <audio controls src="../audio/PASTE_AUDIO_FILE_HERE.mp3"></audio>
+  </div>
+
+  <!-- ============================================================
+       FREE WRITING
+       The textarea needs data-save + a unique id, same as the
+       fill-in-the-blank inputs. The word counter is optional —
+       it just needs data-wordcount-for="<textarea id>".
+       ============================================================ -->
+  <div class="section">
+    <h2>Your turn: write</h2>
+    <!-- ★ 9. Replace the writing prompt -->
+    <div class="instructions">Write 4–6 sentences about: [prompt goes here].</div>
+    <textarea class="free-write" id="writing-1" data-save
+              placeholder="Start writing here..."></textarea>
+    <div class="word-count" data-wordcount-for="writing-1">0 words</div>
+  </div>
+
+  <div class="lesson-footer-nav">
+    <a class="btn secondary" href="../index.html">&larr; Back to all lessons</a>
+  </div>
+
+</div>
+
+<script src="../script.js"></script>
+<script>
+  // ★ 10. Set this to match the filename, e.g. "lesson-02"
+  const LESSON_ID = "lesson-XX";
+
+  KL.initHomePage();
+  KL.initLessonPage(LESSON_ID);
+</script>
+</body>
+</html>

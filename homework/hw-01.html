@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homework 01 — Unit 2A Follow-up</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="site-title" href="../index.html" style="text-decoration:none;">Ksyusha's English Lessons</a>
+  <nav class="topnav">
+    <a class="btn small secondary" href="../index.html">&larr; Home</a>
+    <a href="../homework.html" class="active">Homework</a>
+  </nav>
+  <div class="greeting" id="greeting"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Homework 01 — Unit 2A Follow-up</h1>
+    <p>Practice for Lesson 01 (Unit 2A "To the Rescue!"): past simple vs. past continuous, and animal vocabulary.</p>
+  </div>
+
+  <!-- ============================================================
+       This is a scaffold, not filled from the textbook yet —
+       swap in real workbook tasks the same way as a lesson page:
+       fill-in-blank, matching, choice-group, free writing, audio
+       are all available (see homework/hw-template.html for the
+       markup patterns). Everything below is a placeholder.
+       ============================================================ -->
+
+  <div class="section">
+    <h2>Fill in the blanks</h2>
+    <div class="instructions">Complete the sentences using the past simple or past continuous.</div>
+    <p class="blank-line">1. <!-- TODO: replace with a real sentence --> <input type="text" id="hw01-blank-1" data-save size="14"></p>
+    <p class="blank-line">2. <!-- TODO: replace with a real sentence --> <input type="text" id="hw01-blank-2" data-save size="14"></p>
+  </div>
+
+  <div class="section">
+    <h2>Vocabulary review</h2>
+    <div class="instructions">Match each animal word to its meaning (same words as in class — check your notes if you're not sure).</div>
+    <div class="match-grid" data-match-id="hw01-vocab">
+      <div class="match-col">
+        <div class="match-item" data-match="1" data-col="a">feather</div>
+        <div class="match-item" data-match="2" data-col="a">trunk</div>
+      </div>
+      <div class="match-col">
+        <div class="match-item" data-match="2" data-col="b">an elephant's long nose</div>
+        <div class="match-item" data-match="1" data-col="b">one of the soft light parts covering a bird's body</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Write</h2>
+    <div class="instructions">Write 4–5 sentences about an animal rescue you've heard of (real or imagined). Try to use the past simple and past continuous, like in class.</div>
+    <textarea class="free-write" id="hw01-writing-1" data-save placeholder="Start writing here..."></textarea>
+    <div class="word-count" data-wordcount-for="hw01-writing-1">0 words</div>
+  </div>
+
+  <div class="lesson-footer-nav">
+    <a class="btn secondary" href="../homework.html">&larr; Back to all homework</a>
+  </div>
+
+</div>
+
+<script src="../script.js"></script>
+<script>
+  const LESSON_ID = "hw-01";
+  KL.initHomePage();
+  KL.initLessonPage(LESSON_ID);
+</script>
+</body>
+</html>

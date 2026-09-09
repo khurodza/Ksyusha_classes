@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ksyusha's English Lessons</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="site-title">Ksyusha's English Lessons</div>
+  <nav class="topnav">
+    <a href="index.html" class="active">Lessons</a>
+    <a href="homework.html">Homework</a>
+  </nav>
+  <div class="greeting" id="greeting"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Welcome back!</h1>
+    <p>Here are all your lessons, newest first. Click a lesson to open it — your answers are saved automatically as you work, so you can always pick up where you left off.</p>
+  </div>
+
+  <!-- ============================================================
+       LESSON LIST
+       Add a new .lesson-card block each time you add a lesson.
+       Theme classes just cycle the accent color of the tag —
+       theme-mustard / theme-sky / theme-pink (or leave it off
+       for the default mustard).
+       ============================================================ -->
+  <div class="lesson-list">
+
+    <div class="lesson-card theme-mustard">
+      <div>
+        <span class="tag">Lesson 01</span>
+        <p class="meta">8 September 2026 &middot; Unit 2A &middot; Animals &amp; Past Tenses</p>
+        <h3>To the Rescue! — animal rescue stories</h3>
+        <div class="hero-tags">
+          <span class="hero-tag">Grammar: Past Simple vs. Continuous</span>
+          <span class="hero-tag">Vocabulary: Animals</span>
+          <span class="hero-tag">Pronunciation: Weak forms (was/were)</span>
+          <span class="hero-tag">Skills: Listening &amp; Writing</span>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="lessons/lesson-01.html">Open lesson</a>
+        <a class="btn secondary" href="homework/hw-01.html">Homework</a>
+      </div>
+    </div>
+
+    <!--
+    <div class="lesson-card theme-sky">
+      <div>
+        <span class="tag">Lesson 02</span>
+        <p class="meta">15 September 2026 &middot; Topic here</p>
+        <h3>Lesson title here</h3>
+        <div class="hero-tags">
+          <span class="hero-tag">Grammar: topic here</span>
+          <span class="hero-tag">Vocabulary: topic here</span>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="lessons/lesson-02.html">Open lesson</a>
+        <a class="btn secondary" href="homework/hw-02.html">Homework</a>
+      </div>
+    </div>
+    -->
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  KL.initHomePage();
+</script>
+</body>
+</html>

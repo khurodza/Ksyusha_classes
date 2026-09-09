@@ -1,0 +1,493 @@
+/* ============================================================
+   Ksyusha_lessons — shared stylesheet
+   Retro-editorial theme: cream ground, terracotta / mustard /
+   sky-blue / pink color blocks, serif display headings.
+   Loaded by index.html and every lessons/*.html page.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --- palette --- */
+  --cream:      #f5ecdd;
+  --card:       #fbf5e9;
+  --ink:        #3a2a20;
+  --ink-soft:   #7a6a5c;
+  --terracotta: #c14b3a;
+  --terracotta-dark: #a13c2d;
+  --mustard:    #ecb949;
+  --sky:        #85c3de;
+  --sky-dark:   #4f9dbd;
+  --pink:       #f1c8cf;
+
+  /* --- shape / rhythm --- */
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 10px;
+  --border: 2px solid var(--ink);
+  --shadow: 0 6px 0 rgba(58, 42, 32, 0.15);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-size: 17px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.55;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  margin: 0 0 0.4em;
+  letter-spacing: -0.01em;
+}
+
+a { color: inherit; }
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* --- top bar --- */
+.topbar {
+  background: var(--card);
+  border-bottom: var(--border);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topbar .site-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
+.topbar .greeting {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.topbar .greeting button {
+  margin-left: 8px;
+}
+
+/* --- hero / intro block --- */
+.hero {
+  background: var(--pink);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  margin: 28px 0;
+  box-shadow: var(--shadow);
+}
+
+.hero h1 { font-size: 2.05rem; }
+.hero p { margin: 0; color: var(--ink); }
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* --- buttons --- */
+.btn {
+  display: inline-block;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: var(--border);
+  background: var(--terracotta);
+  color: var(--card);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(58, 42, 32, 0.25);
+  transition: transform 0.08s ease;
+}
+
+.btn:hover { background: var(--terracotta-dark); }
+.btn:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(58,42,32,0.25); }
+
+.btn.secondary {
+  background: var(--card);
+  color: var(--ink);
+}
+
+.btn.secondary:hover { background: var(--sky); }
+
+.btn.small {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  box-shadow: none;
+}
+
+/* --- lesson list cards (index.html) --- */
+.lesson-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.lesson-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--card);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+}
+
+.lesson-card .tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--mustard);
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.lesson-card.theme-sky .tag { background: var(--sky); }
+.lesson-card.theme-pink .tag { background: var(--pink); }
+.lesson-card.theme-mustard .tag { background: var(--mustard); }
+
+.lesson-card .meta {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0 0 2px;
+}
+
+.lesson-card h3 { margin: 0 0 4px; font-size: 1.28rem; }
+
+/* --- lesson page sections --- */
+.section {
+  background: var(--card);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 22px 0;
+  box-shadow: var(--shadow);
+}
+
+.section h2 {
+  color: var(--terracotta);
+  font-size: 1.38rem;
+}
+
+.section .instructions {
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.photo-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.photo-row img {
+  flex: 1 1 200px;
+  max-width: 260px;
+  height: 170px;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+}
+
+.placeholder {
+  border: 2px dashed var(--sky-dark);
+  border-radius: var(--radius-sm);
+  background: #eef7fa;
+  color: var(--sky-dark);
+  padding: 16px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* --- fill-in-the-blank --- */
+.blank-line {
+  margin: 10px 0;
+  font-size: 1.04rem;
+}
+
+.blank-line input[type="text"] {
+  border: none;
+  border-bottom: 2px solid var(--ink);
+  background: transparent;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.02rem;
+  padding: 3px 6px;
+  min-width: 140px;
+  color: var(--terracotta-dark);
+  font-weight: 600;
+}
+
+.blank-line input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: var(--terracotta);
+  background: #fff8ec;
+}
+
+/* --- matching exercise --- */
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+
+.match-item {
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.97rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+.match-item.selected {
+  background: var(--mustard);
+}
+
+.match-item.matched {
+  background: var(--sky);
+  cursor: default;
+  opacity: 0.85;
+}
+
+.match-item img {
+  max-width: 100%;
+  border-radius: var(--radius-sm);
+  display: block;
+  margin-bottom: 6px;
+  pointer-events: none;
+}
+
+/* --- free writing --- */
+textarea.free-write {
+  width: 100%;
+  min-height: 160px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.02rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  resize: vertical;
+  background: #fff;
+}
+
+textarea.free-write:focus { outline: none; border-color: var(--terracotta); }
+
+.word-count {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
+/* --- embeds (video / wordwall) --- */
+.embed-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  background: #000;
+}
+
+.embed-frame iframe,
+.embed-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- audio --- */
+audio { width: 100%; }
+
+/* --- save status --- */
+.save-status {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.save-status.show { opacity: 1; transform: translateY(0); }
+
+/* --- footer nav on lesson pages --- */
+.lesson-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* --- top nav links (Lessons / Homework) --- */
+.topnav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.topnav a {
+  font-size: 0.87rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+.topnav a.active {
+  background: var(--terracotta);
+  color: var(--card);
+}
+
+.topnav a:not(.active):hover { background: var(--pink); }
+
+/* --- choice groups (multiple choice / pick-one) --- */
+.choice-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 16px;
+}
+
+.choice-btn {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.choice-btn:hover { background: var(--pink); }
+
+.choice-btn.selected {
+  background: var(--terracotta);
+  color: var(--card);
+  border-color: var(--terracotta);
+}
+
+.choice-question {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 14px 0 2px;
+}
+
+/* --- story / text blocks (reading passages) --- */
+.story-block {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin: 12px 0;
+  font-size: 0.98rem;
+}
+
+.story-block strong.story-title { color: var(--terracotta-dark); }
+
+/* --- note box: live speaking activities done with the teacher --- */
+.note-box {
+  background: var(--mustard);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+/* --- short-answer list (e.g. numbered headline reactions) --- */
+.short-answer-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.short-answer-line .label {
+  flex: 0 0 auto;
+  font-size: 0.96rem;
+  font-weight: 700;
+  min-width: 220px;
+}
+
+.short-answer-line input[type="text"] {
+  flex: 1;
+  border: none;
+  border-bottom: 2px solid var(--ink);
+  background: transparent;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.96rem;
+  padding: 4px 6px;
+}
+
+.short-answer-line input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: var(--terracotta);
+  background: #fff8ec;
+}
+
+@media (max-width: 640px) {
+  .match-grid { grid-template-columns: 1fr; }
+  .topbar { flex-direction: column; align-items: flex-start; }
+  .short-answer-line { flex-direction: column; align-items: flex-start; }
+  .short-answer-line .label { min-width: 0; }
+}

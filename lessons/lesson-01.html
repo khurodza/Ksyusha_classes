@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 01 — Unit 2A: To the Rescue!</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="site-title" href="../index.html" style="text-decoration:none;">Ksyusha's English Lessons</a>
+  <nav class="topnav">
+    <a class="btn small secondary" href="../index.html">&larr; Home</a>
+    <a href="../homework/hw-01.html">Homework</a>
+  </nav>
+  <div class="greeting" id="greeting"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Unit 2A — To the Rescue!</h1>
+    <p>Animal rescue stories from <em>Speakout A2+</em>, Unit 2.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Grammar: Past Simple vs. Continuous</span>
+      <span class="hero-tag">Vocabulary: Animals</span>
+      <span class="hero-tag">Pronunciation: Weak forms (was/were)</span>
+      <span class="hero-tag">Skills: Listening &amp; Writing</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       WARM-UP — Unit opener vlogs (p.17)
+       ============================================================ -->
+  <div class="section">
+    <h2>Warm-up: Vlogs</h2>
+    <div class="instructions">Q: What's your favourite animal?</div>
+    <div class="embed-frame">
+      <video controls src="../686_3- Speakout 3rd A2+ Video/SO3 A2+ U2 BBC Vlogs.mp4"></video>
+    </div>
+
+    <p class="instructions" style="margin-top:14px;">Watch the video. Number the animals in the order you hear them (1–7).</p>
+    <p class="blank-line">dog <input type="text" id="vlog-order-dog" data-save size="2"></p>
+    <p class="blank-line">horse <input type="text" id="vlog-order-horse" data-save size="2"></p>
+    <p class="blank-line">meerkat <input type="text" id="vlog-order-meerkat" data-save size="2"></p>
+    <p class="blank-line">orangutan <input type="text" id="vlog-order-orangutan" data-save size="2"></p>
+    <p class="blank-line">panda <input type="text" id="vlog-order-panda" data-save size="2"></p>
+    <p class="blank-line">parrot <input type="text" id="vlog-order-parrot" data-save size="2"></p>
+    <p class="blank-line">turtle <input type="text" id="vlog-order-turtle" data-save size="2"></p>
+
+    <div class="short-answer-line">
+      <span class="label">What's your favourite animal?</span>
+      <input type="text" id="vlog-favourite-animal" data-save>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       LISTENING (p.18)
+       ============================================================ -->
+  <div class="section">
+    <h2>Listening: animal rescues</h2>
+
+    <div class="instructions">1A. Look at the photos. Which animals are in danger? Why?</div>
+    <div class="photo-row">
+      <img src="../images/lesson-01-bird.png" alt="A baby bird on the ground">
+      <img src="../images/lesson-01-cat-frog.png" alt="A cat looking at a frog">
+      <img src="../images/lesson-01-dog-bridge.png" alt="A dog standing alone on a bridge">
+    </div>
+    <textarea class="free-write" id="listening-1a" data-save style="min-height:80px;"
+              placeholder="Write your ideas here..."></textarea>
+
+    <div class="instructions" style="margin-top:18px;">1B. Listen to a radio phone-in about animal rescues (2.01). Match each person to the animal they rescued.</div>
+    <div class="embed-frame" style="padding-top:20%;">
+      <audio controls style="position:absolute;inset:0;width:100%;" src="../686_2- Speakout 3rd A2+ Class Audio/015_SO3_A2P_SB_2A_Audio_2_01.mp3"></audio>
+    </div>
+
+    <div class="match-grid" data-match-id="listening-who-rescued" style="margin-top:16px;">
+      <div class="match-col">
+        <div class="match-item" data-match="1" data-col="a">Freddie's story</div>
+        <div class="match-item" data-match="2" data-col="a">Bea's story</div>
+        <div class="match-item" data-match="3" data-col="a">Lucas's story</div>
+      </div>
+      <div class="match-col">
+        <div class="match-item" data-match="3" data-col="b">a dog</div>
+        <div class="match-item" data-match="1" data-col="b">a baby bird</div>
+        <div class="match-item" data-match="2" data-col="b">a tortoise</div>
+      </div>
+    </div>
+
+    <div class="instructions" style="margin-top:22px;">1C. Read the story summaries. Each one has two pieces of <strong>incorrect</strong> information. Can you find them before you listen again?</div>
+
+    <div class="story-block">
+      <strong class="story-title">Freddie's story:</strong> A couple saw a baby bird on the road. The man picked up the bird and put it on a gate. A cat tried to play with the bird. The woman cried because she was happy.
+    </div>
+    <div class="short-answer-line"><span class="label">Mistake 1:</span><input type="text" id="listening-1c-freddie-1" data-save></div>
+    <div class="short-answer-line"><span class="label">Mistake 2:</span><input type="text" id="listening-1c-freddie-2" data-save></div>
+
+    <div class="story-block">
+      <strong class="story-title">Bea's story:</strong> A woman saw something in the road. She stopped her car and found a tortoise. Some other drivers were unhappy because her car was stopping the traffic. She picked up the thing she saw and put it on the side of the road.
+    </div>
+    <div class="short-answer-line"><span class="label">Mistake 1:</span><input type="text" id="listening-1c-bea-1" data-save></div>
+    <div class="short-answer-line"><span class="label">Mistake 2:</span><input type="text" id="listening-1c-bea-2" data-save></div>
+
+    <div class="story-block">
+      <strong class="story-title">Lucas's story:</strong> A dog was in a garden. A car hit the dog and the dog ran away. The owners couldn't find the dog. A few weeks later, someone found the dog near a bridge. He rescued the dog.
+    </div>
+    <div class="short-answer-line"><span class="label">Mistake 1:</span><input type="text" id="listening-1c-lucas-1" data-save></div>
+    <div class="short-answer-line"><span class="label">Mistake 2:</span><input type="text" id="listening-1c-lucas-2" data-save></div>
+
+    <div class="note-box" style="margin-top:16px;">1D. Listen again and check your answers together with your teacher.</div>
+  </div>
+
+  <!-- ============================================================
+       GRAMMAR: past simple and continuous (p.18)
+       ============================================================ -->
+  <div class="section">
+    <h2>Grammar: past simple and continuous</h2>
+
+    <div class="instructions">2A. Look at these sentences and find the verbs.</div>
+
+    <p class="blank-line">1. One day, we were walking down a street and we saw a baby bird on the side of the road.</p>
+    <p class="blank-line">2. While we were watching, a cat came out and jumped on it.</p>
+    <p class="blank-line">3. I was driving home in the early evening and I saw something on the side of the road.</p>
+    <p class="blank-line">4. Anyway, last year Ezra was playing in the garden when a car crashed into the fence.</p>
+
+    <div class="instructions" style="margin-top:16px;">2B. Write the verbs you found in the correct column below.</div>
+    <div class="match-grid">
+      <div class="match-col">
+        <div class="choice-question" style="margin-top:0;">Past simple</div>
+        <textarea class="free-write" id="grammar-2b-simple" data-save style="min-height:120px;" placeholder="e.g. saw..."></textarea>
+      </div>
+      <div class="match-col">
+        <div class="choice-question" style="margin-top:0;">Past continuous</div>
+        <textarea class="free-write" id="grammar-2b-continuous" data-save style="min-height:120px;" placeholder="e.g. was driving..."></textarea>
+      </div>
+    </div>
+    <div class="instructions" style="margin-top:16px;">How do we form the past continuous?</div>
+    <textarea class="free-write" id="grammar-2b-rule" data-save style="min-height:70px;" placeholder="Write your answer here..."></textarea>
+
+    <div class="instructions" style="margin-top:16px;">2C. Choose the correct words to complete the rules.</div>
+
+    <div class="choice-question">1. We use ... for the main events in a story.</div>
+    <div class="choice-group" id="grammar-2c-1">
+      <button type="button" class="choice-btn" data-value="past simple">past simple</button>
+      <button type="button" class="choice-btn" data-value="past continuous">past continuous</button>
+    </div>
+
+    <div class="choice-question">2. We use ... for the background situation, at the start of the story.</div>
+    <div class="choice-group" id="grammar-2c-2">
+      <button type="button" class="choice-btn" data-value="past simple">past simple</button>
+      <button type="button" class="choice-btn" data-value="past continuous">past continuous</button>
+    </div>
+
+    <div class="choice-question">3. We use ... for the action that takes a longer time.</div>
+    <div class="choice-group" id="grammar-2c-3">
+      <button type="button" class="choice-btn" data-value="past simple">past simple</button>
+      <button type="button" class="choice-btn" data-value="past continuous">past continuous</button>
+    </div>
+
+    <div class="choice-question">4. We use ... with the past simple.</div>
+    <div class="choice-group" id="grammar-2c-4">
+      <button type="button" class="choice-btn" data-value="when">when</button>
+      <button type="button" class="choice-btn" data-value="while">while</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRONUNCIATION: weak forms was, were (p.19)
+       ============================================================ -->
+  <div class="section">
+    <h2>Pronunciation: weak forms <em>was, were</em></h2>
+
+    <div class="instructions">3A. Listen (2.02) and write the sentences you hear.</div>
+    <div class="embed-frame" style="padding-top:20%;">
+      <audio controls style="position:absolute;inset:0;width:100%;" src="../686_2- Speakout 3rd A2+ Class Audio/016_SO3_A2P_SB_2A_Audio_2_02.mp3"></audio>
+    </div>
+    <p class="blank-line">1. <input type="text" id="pron-3a-1" data-save style="min-width:80%;"></p>
+    <p class="blank-line">2. <input type="text" id="pron-3a-2" data-save style="min-width:80%;"></p>
+    <p class="blank-line">3. <input type="text" id="pron-3a-3" data-save style="min-width:80%;"></p>
+    <p class="blank-line">4. <input type="text" id="pron-3a-4" data-save style="min-width:80%;"></p>
+
+    <div class="instructions" style="margin-top:16px;">3B. Listen again and choose the correct alternative.</div>
+
+    <div class="choice-question">1. In the past continuous, <em>was</em> and <em>were</em> are...</div>
+    <div class="choice-group" id="pron-3b-1">
+      <button type="button" class="choice-btn" data-value="stressed">stressed</button>
+      <button type="button" class="choice-btn" data-value="unstressed">unstressed</button>
+    </div>
+
+    <div class="choice-question">2. We pronounce <em>was</em> as...</div>
+    <div class="choice-group" id="pron-3b-2">
+      <button type="button" class="choice-btn" data-value="/wɒz/">/wɒz/</button>
+      <button type="button" class="choice-btn" data-value="/wəz/">/wəz/</button>
+    </div>
+
+    <div class="choice-question">3. We pronounce <em>were</em> as...</div>
+    <div class="choice-group" id="pron-3b-3">
+      <button type="button" class="choice-btn" data-value="/wə/">/wə/</button>
+      <button type="button" class="choice-btn" data-value="/wɜː/">/wɜː/</button>
+    </div>
+
+    <div class="instructions" style="margin-top:16px;">3C. Make two of your own questions using the past continuous (example: <em>What were you doing this time yesterday?</em>).</div>
+    <div class="short-answer-line"><span class="label">Question 1:</span><input type="text" id="pron-3c-q1" data-save></div>
+    <div class="short-answer-line"><span class="label">Question 2:</span><input type="text" id="pron-3c-q2" data-save></div>
+
+    <div class="note-box" style="margin-top:8px;">3D. Ask and answer your questions together with your teacher.</div>
+  </div>
+
+  <!-- ============================================================
+       VOCABULARY: animals (p.19)
+       ============================================================ -->
+  <div class="section">
+    <h2>Vocabulary: animal body parts</h2>
+    <div class="instructions">4A. Match each word to its meaning.</div>
+
+    <div class="match-grid" data-match-id="vocab-animal-parts">
+      <div class="match-col">
+        <div class="match-item" data-match="1" data-col="a">feather</div>
+        <div class="match-item" data-match="2" data-col="a">fur</div>
+        <div class="match-item" data-match="3" data-col="a">shell</div>
+        <div class="match-item" data-match="4" data-col="a">skin</div>
+        <div class="match-item" data-match="5" data-col="a">tail</div>
+        <div class="match-item" data-match="6" data-col="a">trunk</div>
+        <div class="match-item" data-match="7" data-col="a">web</div>
+        <div class="match-item" data-match="8" data-col="a">wing</div>
+      </div>
+      <div class="match-col">
+        <div class="match-item" data-match="5" data-col="b">the part at the back of an animal's body, e.g. a dog's ___</div>
+        <div class="match-item" data-match="2" data-col="b">the soft hair covering an animal's body, e.g. a cat's ___</div>
+        <div class="match-item" data-match="1" data-col="b">one of the soft light parts covering a bird's body</div>
+        <div class="match-item" data-match="8" data-col="b">the skin between the toes on some animals' feet, e.g. a duck's ___</div>
+        <div class="match-item" data-match="3" data-col="b">the hard outer covering of an animal, e.g. a tortoise's ___</div>
+        <div class="match-item" data-match="6" data-col="b">an elephant's long nose</div>
+        <div class="match-item" data-match="4" data-col="b">the outer covering of a person's or animal's body</div>
+        <div class="match-item" data-match="7" data-col="b">the part of a bird's body it uses to fly</div>
+      </div>
+    </div>
+
+    <div class="instructions" style="margin-top:18px;">4B. List seven animals that aren't shown on this page.</div>
+    <textarea class="free-write" id="vocab-4b" data-save style="min-height:70px;" placeholder="e.g. elephant, ..."></textarea>
+
+    <div class="note-box" style="margin-top:16px;">5. Guessing game: think of an animal — your teacher will ask yes/no questions to guess it. Then swap roles!</div>
+  </div>
+
+  <!-- ============================================================
+       SPEAKING (p.19)
+       ============================================================ -->
+  <div class="section">
+    <h2>Speaking: news headlines</h2>
+    <div class="instructions">6A. Read the headlines. What do you think happened?</div>
+
+    <div class="short-answer-line"><span class="label">"Duck to painter: You're my hero!"</span><input type="text" id="speaking-6a-1" data-save></div>
+    <div class="short-answer-line"><span class="label">"Lost teddy bear rescued from bus"</span><input type="text" id="speaking-6a-2" data-save></div>
+    <div class="short-answer-line"><span class="label">"Who says dogs can't fly?"</span><input type="text" id="speaking-6a-3" data-save></div>
+    <div class="short-answer-line"><span class="label">"Firefighters catch runaway monkey"</span><input type="text" id="speaking-6a-4" data-save></div>
+    <div class="short-answer-line"><span class="label">"Elephant surprises supermarket shoppers"</span><input type="text" id="speaking-6a-5" data-save></div>
+    <div class="short-answer-line"><span class="label">"Pet rabbit returns after 50km journey"</span><input type="text" id="speaking-6a-6" data-save></div>
+
+    <div class="note-box" style="margin-top:16px;">6B. Info-gap story: your teacher will give you a story to tell your partner.</div>
+  </div>
+
+  <!-- ============================================================
+       WRITING (p.19)
+       ============================================================ -->
+  <div class="section">
+    <h2>Writing: an animal rescue story</h2>
+    <div class="instructions">7A. Read the beginning of a story. The same animal is missing three times — guess it, then decide which headline from 6A it matches.</div>
+
+    <div class="story-block">
+      I'm a teacher. Last year I took my primary school class to the zoo, and one of the workers at the
+      zoo was showing us a <input type="text" id="writing-7a-blank1" data-save size="10">. The
+      <input type="text" id="writing-7a-blank2" data-save size="10"> was in a large cage, and he was
+      jumping around and trying to get out. While the worker was getting some food for him from another
+      room, one of the children — one of my students — opened the cage. I ran over to close it, but at
+      that exact moment, the <input type="text" id="writing-7a-blank3" data-save size="10"> ran out.
+    </div>
+    <div class="short-answer-line"><span class="label">Which headline matches?</span><input type="text" id="writing-7a-headline" data-save></div>
+
+    <div class="instructions" style="margin-top:16px;">7B. What else do you think happens in the story?</div>
+    <textarea class="free-write" id="writing-7b" data-save style="min-height:90px;" placeholder="Write your ideas here..."></textarea>
+
+    <div class="instructions" style="margin-top:16px;">7C. Now write your own story about an animal rescue (5–8 sentences). Try to use the past simple and past continuous.</div>
+    <textarea class="free-write" id="writing-7c" data-save placeholder="Start writing here..."></textarea>
+    <div class="word-count" data-wordcount-for="writing-7c">0 words</div>
+  </div>
+
+  <div class="lesson-footer-nav">
+    <a class="btn secondary" href="../index.html">&larr; Back to all lessons</a>
+    <a class="btn" href="../homework/hw-01.html">Homework &rarr;</a>
+  </div>
+
+</div>
+
+<script src="../script.js"></script>
+<script>
+  const LESSON_ID = "lesson-01";
+  KL.initHomePage();
+  KL.initLessonPage(LESSON_ID);
+</script>
+</body>
+</html>
