@@ -25,33 +25,70 @@
   </div>
 
   <!-- ============================================================
-       This is a scaffold, not filled from the textbook yet —
-       swap in real workbook tasks the same way as a lesson page:
-       fill-in-blank, matching, choice-group, free writing, audio
-       are all available (see homework/hw-template.html for the
-       markup patterns). Everything below is a placeholder.
+       TASK 1 — past simple vs. past continuous (animal rescue story)
        ============================================================ -->
-
   <div class="section">
-    <h2>Fill in the blanks</h2>
-    <div class="instructions">Complete the sentences using the past simple or past continuous.</div>
-    <p class="blank-line">1. <!-- TODO: replace with a real sentence --> <input type="text" id="hw01-blank-1" data-save size="14"></p>
-    <p class="blank-line">2. <!-- TODO: replace with a real sentence --> <input type="text" id="hw01-blank-2" data-save size="14"></p>
+    <h2>Task 1: The cat in the tree</h2>
+    <div class="instructions">Complete the story with the past simple or past continuous form of the verbs in brackets. The first one is done for you.</div>
+    <div class="story-block">
+      Last Saturday my brother and I <em>were playing</em> (play) football in the park when we
+      <input type="text" id="hw01-t1-1" data-save size="10"> (hear) a strange noise. A small cat
+      <input type="text" id="hw01-t1-2" data-save size="12"> (sit) at the top of a tall tree and it
+      <input type="text" id="hw01-t1-3" data-save size="12"> (cry) loudly. While my brother
+      <input type="text" id="hw01-t1-4" data-save size="12"> (try) to climb the tree, an old man
+      <input type="text" id="hw01-t1-5" data-save size="10"> (stop) and
+      <input type="text" id="hw01-t1-6" data-save size="10"> (call) the fire station. It
+      <input type="text" id="hw01-t1-7" data-save size="12"> (rain) when the firefighters
+      <input type="text" id="hw01-t1-8" data-save size="10"> (arrive), but they
+      <input type="text" id="hw01-t1-9" data-save size="10"> (rescue) the cat in five minutes. When I
+      <input type="text" id="hw01-t1-10" data-save size="10"> (get) home, I
+      <input type="text" id="hw01-t1-11" data-save size="10"> (tell) my mum the whole story.
+    </div>
+
+    <div class="instructions" style="margin-top:18px;">Now choose <em>when</em> or <em>while</em>.</div>
+
+    <div class="choice-question">1. ... we were walking home, we saw a fox.</div>
+    <div class="choice-group" id="hw01-t1-ww-1">
+      <button type="button" class="choice-btn" data-value="When">When</button>
+      <button type="button" class="choice-btn" data-value="While">While</button>
+    </div>
+
+    <div class="choice-question">2. The dog was sleeping ... the phone rang.</div>
+    <div class="choice-group" id="hw01-t1-ww-2">
+      <button type="button" class="choice-btn" data-value="when">when</button>
+      <button type="button" class="choice-btn" data-value="while">while</button>
+    </div>
+
+    <div class="choice-question">3. ... the bird flew away, the cat jumped.</div>
+    <div class="choice-group" id="hw01-t1-ww-3">
+      <button type="button" class="choice-btn" data-value="When">When</button>
+      <button type="button" class="choice-btn" data-value="While">While</button>
+    </div>
   </div>
 
+  <!-- ============================================================
+       TASK 2 — animal body parts vocabulary
+       ============================================================ -->
   <div class="section">
-    <h2>Vocabulary review</h2>
-    <div class="instructions">Match each animal word to its meaning (same words as in class — check your notes if you're not sure).</div>
-    <div class="match-grid" data-match-id="hw01-vocab">
-      <div class="match-col">
-        <div class="match-item" data-match="1" data-col="a">feather</div>
-        <div class="match-item" data-match="2" data-col="a">trunk</div>
-      </div>
-      <div class="match-col">
-        <div class="match-item" data-match="2" data-col="b">an elephant's long nose</div>
-        <div class="match-item" data-match="1" data-col="b">one of the soft light parts covering a bird's body</div>
-      </div>
+    <h2>Task 2: Animal body parts</h2>
+    <div class="instructions">Complete the sentences with the words from the box. Use each word once.</div>
+    <div class="story-block" style="text-align:center;">
+      feather &nbsp;&middot;&nbsp; fur &nbsp;&middot;&nbsp; shell &nbsp;&middot;&nbsp; skin &nbsp;&middot;&nbsp;
+      tail &nbsp;&middot;&nbsp; trunk &nbsp;&middot;&nbsp; web &nbsp;&middot;&nbsp; wing
     </div>
+    <p class="blank-line">1. An elephant uses its <input type="text" id="hw01-t2-1" data-save size="10"> to drink water.</p>
+    <p class="blank-line">2. The tortoise hid inside its <input type="text" id="hw01-t2-2" data-save size="10"> when it saw the dog.</p>
+    <p class="blank-line">3. The bird couldn't fly because its <input type="text" id="hw01-t2-3" data-save size="10"> was broken.</p>
+    <p class="blank-line">4. My cat has very soft, grey <input type="text" id="hw01-t2-4" data-save size="10">.</p>
+    <p class="blank-line">5. Dogs move their <input type="text" id="hw01-t2-5" data-save size="10"> when they are happy.</p>
+    <p class="blank-line">6. I found a long white <input type="text" id="hw01-t2-6" data-save size="10"> from a swan on the beach.</p>
+    <p class="blank-line">7. Ducks have a <input type="text" id="hw01-t2-7" data-save size="10"> between their toes to help them swim.</p>
+    <p class="blank-line">8. A frog's <input type="text" id="hw01-t2-8" data-save size="10"> is always wet.</p>
+
+    <div class="instructions" style="margin-top:18px;">Which animal is it? Write the name.</div>
+    <div class="short-answer-line"><span class="label">It has a shell and moves very slowly.</span><input type="text" id="hw01-t2-a1" data-save></div>
+    <div class="short-answer-line"><span class="label">It has a trunk and big ears.</span><input type="text" id="hw01-t2-a2" data-save></div>
+    <div class="short-answer-line"><span class="label">It has feathers and can talk!</span><input type="text" id="hw01-t2-a3" data-save></div>
   </div>
 
   <div class="section">

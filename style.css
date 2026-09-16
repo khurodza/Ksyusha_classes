@@ -485,6 +485,127 @@ audio { width: 100%; }
   background: #fff8ec;
 }
 
+/* --- phrase boxes: highlighted "Useful language" / "Everyday English" ---
+   Add .phrase-box.pink or .phrase-box.sky; the label comes from
+   the data-label attribute (shown as a tab in the top-left corner). */
+.phrase-box {
+  position: relative;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 26px 18px 14px;
+  margin: 14px 0;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.phrase-box::before {
+  content: attr(data-label);
+  position: absolute;
+  top: -14px;
+  left: 14px;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  padding: 3px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--mustard);
+  color: var(--ink);
+}
+
+.phrase-box.pink  { background: #fbe4e8; }
+.phrase-box.pink::before  { background: var(--terracotta); color: #fff; }
+.phrase-box.sky   { background: #e3f2f9; }
+.phrase-box.sky::before   { background: var(--sky-dark); color: #fff; }
+
+.phrase-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.phrase-box li {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* --- step cards: PLAN → SPEAK → CHECK flow --- */
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.step-card {
+  position: relative;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 20px 20px 18px 24px;
+  box-shadow: var(--shadow);
+  border-left-width: 10px;
+}
+
+.step-card.plan  { background: #fff3d6; border-left-color: var(--mustard); }
+.step-card.speak { background: #fbe4e8; border-left-color: var(--terracotta); }
+.step-card.check { background: #e3f2f9; border-left-color: var(--sky-dark); }
+.step-card.write { background: #fff;    border-left-color: var(--ink); }
+
+.step-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.step-num {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.step-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.step-card.plan  .step-title { color: #9a6d0a; }
+.step-card.speak .step-title { color: var(--terracotta-dark); }
+.step-card.check .step-title { color: var(--sky-dark); }
+
+.step-card .short-answer-line input[type="text"] { background: rgba(255,255,255,0.6); }
+
+.step-card .short-answer-line .label { min-width: 250px; }
+
+.step-tip {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 2px dashed var(--ink);
+  border-radius: var(--radius-sm);
+  font-size: 0.94rem;
+}
+
 @media (max-width: 640px) {
   .match-grid { grid-template-columns: 1fr; }
   .topbar { flex-direction: column; align-items: flex-start; }

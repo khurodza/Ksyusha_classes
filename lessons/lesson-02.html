@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 02 — Guess What Happened?</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="site-title" href="../index.html" style="text-decoration:none;">Ksyusha's English Lessons</a>
+  <nav class="topnav">
+    <a class="btn small secondary" href="../index.html">&larr; Home</a>
+    <a href="../homework.html">Homework</a>
+  </nav>
+  <div class="greeting" id="greeting"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Lesson 02 — Guess What Happened?</h1>
+    <p>Past continuous questions, past simple vs. past continuous in a story, and how to tell a short anecdote in English.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Grammar: Past continuous questions</span>
+      <span class="hero-tag">Grammar: Past simple &amp; continuous together</span>
+      <span class="hero-tag">Speaking: Telling an anecdote</span>
+      <span class="hero-tag">Everyday English: reacting to a story</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       KEY VOCABULARY (scaffolding)
+       ============================================================ -->
+  <div class="section">
+    <h2>Key words for today</h2>
+    <div class="instructions">New vocabulary before we start:</div>
+    <ul>
+      <li><strong>anecdote</strong> — a short, funny or interesting story about something that happened</li>
+      <li><strong>embarrassed</strong> — feeling shy or ashamed because of something you did</li>
+      <li><strong>bump into (someone)</strong> — hit someone by accident, or meet someone by chance</li>
+      <li><strong>trainers</strong> — sports shoes</li>
+      <li><strong>hoodie</strong> — a sweatshirt with a hood</li>
+      <li><strong>icy</strong> — covered with ice, very slippery</li>
+      <li><strong>pick up</strong> — lift something from the ground</li>
+      <li><strong>interrupt</strong> — stop someone while they are speaking</li>
+      <li><strong>shopping centre</strong> — a large building with many shops inside</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       WARM-UP
+       ============================================================ -->
+  <div class="section">
+    <h2>Warm-up: this time yesterday</h2>
+    <div class="instructions">What were you doing at these times? Write a short answer for each one.</div>
+    <div class="short-answer-line"><span class="label">At 8 am yesterday:</span><input type="text" id="warmup-1" data-save placeholder="I was ..."></div>
+    <div class="short-answer-line"><span class="label">At 1 pm yesterday:</span><input type="text" id="warmup-2" data-save placeholder="I was ..."></div>
+    <div class="short-answer-line"><span class="label">At 8 pm yesterday:</span><input type="text" id="warmup-3" data-save placeholder="I was ..."></div>
+    <div class="note-box" style="margin-top:12px;">Now ask your teacher the same questions: <em>What were you doing at ... ?</em></div>
+  </div>
+
+  <!-- ============================================================
+       GRAMMAR 1: past continuous questions
+       ============================================================ -->
+  <div class="section">
+    <h2>Grammar: past continuous questions</h2>
+
+    <div class="instructions">1. Complete the examples in the table.</div>
+    <div class="match-grid">
+      <div class="match-col">
+        <div class="choice-question" style="margin-top:0;">I / he / she / it</div>
+        <div class="story-block" style="margin:0;">
+          <strong>Was</strong> he <strong>wearing</strong> his wedding clothes?<br>
+          Yes, he <input type="text" id="g1-1" data-save size="6">. /
+          No, he <input type="text" id="g1-2" data-save size="6">.
+        </div>
+      </div>
+      <div class="match-col">
+        <div class="choice-question" style="margin-top:0;">you / we / they</div>
+        <div class="story-block" style="margin:0;">
+          <input type="text" id="g1-3" data-save size="6"> the children <strong>standing</strong> close to the lake?<br>
+          Yes, they <input type="text" id="g1-4" data-save size="6">. / No, they <strong>weren't</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="instructions" style="margin-top:22px;">2. Write the dialogues with the past continuous form of the verbs. Then check with your teacher.</div>
+
+    <div class="story-block">
+      <strong class="story-title">1</strong><br>
+      <strong>A</strong> you / TV at 8 pm last night? (watch)<br>
+      <em>Were you watching TV at 8 pm last night?</em><br>
+      <strong>B</strong> ✓<br>
+      <em>Yes, I was.</em>
+    </div>
+
+    <div class="story-block">
+      <strong class="story-title">2</strong><br>
+      <strong>A</strong> What / your friends / at 7 am this morning? (do)<br>
+      <input type="text" id="g2-2a" data-save style="width:100%;margin:6px 0;"><br>
+      <strong>B</strong> get up<br>
+      <input type="text" id="g2-2b" data-save style="width:100%;margin:6px 0;">
+    </div>
+
+    <div class="story-block">
+      <strong class="story-title">3</strong><br>
+      <strong>A</strong> What / you / yesterday? (wear)<br>
+      <input type="text" id="g2-3a" data-save style="width:100%;margin:6px 0;"><br>
+      <strong>B</strong> jeans and a hoodie<br>
+      <input type="text" id="g2-3b" data-save style="width:100%;margin:6px 0;">
+    </div>
+
+    <div class="story-block">
+      <strong class="story-title">4</strong><br>
+      <strong>A</strong> your best friend / at 5 pm yesterday? (chat online)<br>
+      <input type="text" id="g2-4a" data-save style="width:100%;margin:6px 0;"><br>
+      <strong>B</strong> ✗ play basketball<br>
+      <input type="text" id="g2-4b" data-save style="width:100%;margin:6px 0;">
+    </div>
+  </div>
+
+  <!-- ============================================================
+       GRAMMAR 2: past simple and past continuous
+       ============================================================ -->
+  <div class="section">
+    <h2>Grammar: past simple and past continuous</h2>
+
+    <div class="instructions">3. Complete the examples with the correct form of the verb in brackets.</div>
+    <div class="story-block">
+      <strong>When</strong> Clayton <strong>jumped</strong> into the water, he
+      <input type="text" id="g3-1" data-save size="12"> (wear) his wedding clothes.<br><br>
+      <strong>While</strong> the photographer <input type="text" id="g3-2" data-save size="12"> (prepare)
+      his camera, Clayton <strong>noticed</strong> three children.
+    </div>
+
+    <div class="note-box" style="margin-top:14px;">
+      Get it right!<br>
+      <span style="font-weight:500;">
+        We can use <em>when</em>, <em>while</em> and <em>as</em> + past continuous for a longer action in progress.<br>
+        We use <em>when</em> + past simple for a shorter action that interrupts a longer one.
+      </span>
+    </div>
+
+    <div class="instructions" style="margin-top:22px;">4. Complete the text with the past simple or past continuous. Then check with your teacher.</div>
+    <div class="story-block">
+      I <em>was walking</em> (walk) to the bus stop one afternoon when I
+      <input type="text" id="g4-2" data-save size="10"> (fall) over on the icy street.
+      I <input type="text" id="g4-3" data-save size="12"> (carry) a heavy bag with all my school things
+      and I <input type="text" id="g4-4" data-save size="10"> (break) my glasses.
+      I <input type="text" id="g4-5" data-save size="10"> (feel) very embarrassed.<br><br>
+      A lot of other people <input type="text" id="g4-6" data-save size="12"> (wait) for the bus,
+      but they <input type="text" id="g4-7" data-save size="12"> (not help) me. However, one woman
+      <input type="text" id="g4-8" data-save size="12"> (pick up) my bag and glasses and she
+      <input type="text" id="g4-9" data-save size="10"> (find) an empty seat for me. While I
+      <input type="text" id="g4-10" data-save size="12"> (sit) there, she
+      <input type="text" id="g4-11" data-save size="10"> (clean) my face and gave me some water.
+      But when I <input type="text" id="g4-12" data-save size="10"> (look) for her a few minutes later,
+      there was no one there.
+    </div>
+
+    <div class="instructions" style="margin-top:22px;">5. Use it! Continue and finish the story. Use the past simple and past continuous.</div>
+    <div class="story-block"><em>While I was walking to school this morning, I saw …</em></div>
+    <textarea class="free-write" id="g5-story" data-save style="min-height:110px;"
+              placeholder="While I was walking to school this morning, I saw ..."></textarea>
+    <div class="word-count" data-wordcount-for="g5-story">0 words</div>
+    <div class="note-box" style="margin-top:12px;">Now tell the story to your teacher — take turns adding one sentence each.</div>
+  </div>
+
+  <!-- ============================================================
+       SPEAKING: telling an anecdote
+       ============================================================ -->
+  <div class="section">
+    <h2>Speaking: telling an anecdote</h2>
+
+    <div class="instructions">1. Read the conversation. Who is the story about, and what was the person doing?</div>
+
+    <div class="story-block">
+      <p><strong class="story-title">DAVID</strong> &nbsp;<em>Guess what happened</em> yesterday?</p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;No idea.</p>
+      <p><strong class="story-title">DAVID</strong> &nbsp;Well, it didn't happen to me,
+        <input type="text" id="sp2-2" data-save size="16"> Adrian.</p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;Go on.</p>
+      <p><strong class="story-title">DAVID</strong> &nbsp;He was at the new shopping centre.</p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;You're kidding!
+        <input type="text" id="sp2-3" data-save size="18"> a shopping centre? He hates shopping.</p>
+      <p><strong class="story-title">DAVID</strong> &nbsp;He was looking for new trainers.</p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;<input type="text" id="sp2-4" data-save size="10"></p>
+      <p><strong class="story-title">DAVID</strong> &nbsp;Yes, really. Now please stop interrupting.
+        While he was looking at the trainers, someone bumped into him.</p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;Who was it?</p>
+      <p><strong class="story-title">DAVID</strong> &nbsp;It was Neymar!</p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;No way!
+        <input type="text" id="sp2-5" data-save size="18"></p>
+      <p><strong class="story-title">DAVID</strong> &nbsp;I know.</p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;Did he take a photo?</p>
+      <p><strong class="story-title">DAVID</strong> &nbsp;No, he didn't. He was too embarrassed. Can you believe it?</p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;What a great story!</p>
+    </div>
+
+    <div class="short-answer-line"><span class="label">Who is the story about?</span><input type="text" id="sp1-who" data-save></div>
+    <div class="short-answer-line"><span class="label">What was he doing?</span><input type="text" id="sp1-doing" data-save></div>
+
+    <div class="instructions" style="margin-top:22px;">2. Complete the conversation above with phrases from the <em>Useful language</em> box.</div>
+
+    <div class="phrase-box pink" data-label="Useful language">
+      <ul>
+        <li>Guess what happened (yesterday)?</li>
+        <li>It happened to …</li>
+        <li>Really?</li>
+        <li>That's amazing / incredible!</li>
+        <li>What was (he) doing (in) … ?</li>
+      </ul>
+    </div>
+
+    <div class="phrase-box sky" data-label="Everyday English">
+      <ul>
+        <li>Go on.</li>
+        <li>No idea.</li>
+        <li>What a great story!</li>
+        <li>You're kidding!</li>
+      </ul>
+    </div>
+
+    <div class="instructions" style="margin-top:22px;">3. Find the <em>Everyday English</em> phrases in the conversation. Which phrase do you use when you …</div>
+    <div class="match-grid" data-match-id="everyday-english">
+      <div class="match-col">
+        <div class="match-item" data-match="1" data-col="a">don't know?</div>
+        <div class="match-item" data-match="2" data-col="a">hear something surprising?</div>
+        <div class="match-item" data-match="3" data-col="a">want someone to continue?</div>
+        <div class="match-item" data-match="4" data-col="a">liked a story that someone told you?</div>
+      </div>
+      <div class="match-col">
+        <div class="match-item" data-match="3" data-col="b">Go on.</div>
+        <div class="match-item" data-match="4" data-col="b">What a great story!</div>
+        <div class="match-item" data-match="1" data-col="b">No idea.</div>
+        <div class="match-item" data-match="2" data-col="b">You're kidding!</div>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">Read the conversation aloud with your teacher. You are Laura first, then swap roles.</div>
+  </div>
+
+  <!-- ============================================================
+       YOUR ANECDOTE — PLAN → SPEAK → CHECK → WRITE
+       ============================================================ -->
+  <div class="section">
+    <h2>Your anecdote</h2>
+    <div class="instructions">Now it's your turn to tell a story — follow the four steps.</div>
+
+    <div class="steps">
+
+      <div class="step-card plan">
+        <div class="step-head">
+          <div class="step-num">1</div>
+          <div class="step-title">Plan</div>
+        </div>
+        <p style="margin:0 0 8px;">Think of something <strong>funny or unusual</strong> that happened — to you, a friend, or someone in your family. Make notes:</p>
+        <div class="short-answer-line"><span class="label">Who did it happen to?</span><input type="text" id="plan-who" data-save placeholder="It happened to ..."></div>
+        <div class="short-answer-line"><span class="label">What was the person doing when it happened?</span><input type="text" id="plan-doing" data-save placeholder="He / She was ..."></div>
+        <div class="short-answer-line"><span class="label">What happened?</span><input type="text" id="plan-what" data-save placeholder="Suddenly, ..."></div>
+      </div>
+
+      <div class="step-card speak">
+        <div class="step-head">
+          <div class="step-num">2</div>
+          <div class="step-title">Speak</div>
+        </div>
+        <p style="margin:0 0 8px;">Tell your teacher the anecdote. Start with <strong>"Guess what happened?"</strong> — your teacher will react with the <em>Everyday English</em> phrases, so be ready to answer questions!</p>
+        <div class="step-tip">
+          <strong>Checklist:</strong>
+          past continuous for the background ✓ &nbsp;·&nbsp;
+          past simple for the main events ✓ &nbsp;·&nbsp;
+          today's key words ✓ &nbsp;·&nbsp;
+          phrases from <em>Useful language</em> ✓
+        </div>
+      </div>
+
+      <div class="step-card check">
+        <div class="step-head">
+          <div class="step-num">3</div>
+          <div class="step-title">Check</div>
+        </div>
+        <p style="margin:0 0 8px;">Now swap: listen to <strong>your teacher's</strong> anecdote and complete the notes. React with <em>No idea. / Go on. / You're kidding! / What a great story!</em></p>
+        <div class="short-answer-line"><span class="label">Who the story happened to:</span><input type="text" id="check-who" data-save></div>
+        <div class="short-answer-line"><span class="label">What the person was doing:</span><input type="text" id="check-doing" data-save></div>
+        <div class="short-answer-line"><span class="label">What happened:</span><input type="text" id="check-what" data-save></div>
+      </div>
+
+      <div class="step-card write">
+        <div class="step-head">
+          <div class="step-num">4</div>
+          <div class="step-title">Write</div>
+        </div>
+        <p style="margin:0 0 8px;">Turn your anecdote into a short story (5–8 sentences).</p>
+        <textarea class="free-write" id="anecdote-writing" data-save placeholder="Guess what happened ..."></textarea>
+        <div class="word-count" data-wordcount-for="anecdote-writing">0 words</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="lesson-footer-nav">
+    <a class="btn secondary" href="../index.html">&larr; Back to all lessons</a>
+  </div>
+
+</div>
+
+<script src="../script.js"></script>
+<script>
+  const LESSON_ID = "lesson-02";
+  KL.initHomePage();
+  KL.initLessonPage(LESSON_ID);
+</script>
+</body>
+</html>
