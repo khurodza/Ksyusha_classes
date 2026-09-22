@@ -21,7 +21,7 @@
 
   <div class="hero">
     <h1>Homework 01 — Unit 2A Follow-up</h1>
-    <p>Practice for Lesson 01 (Unit 2A "To the Rescue!"): past simple vs. past continuous, and animal vocabulary.</p>
+    <p>Practice for Lesson 01 (Unit 2A "To the Rescue!"): past simple vs. past continuous, and past simple verbs (regular and irregular).</p>
   </div>
 
   <!-- ============================================================
@@ -67,35 +67,98 @@
   </div>
 
   <!-- ============================================================
-       TASK 2 — animal body parts vocabulary
+       TASK 2 — past simple irregular verbs (matching)
        ============================================================ -->
   <div class="section">
-    <h2>Task 2: Animal body parts</h2>
-    <div class="instructions">Complete the sentences with the words from the box. Use each word once.</div>
-    <div class="story-block" style="text-align:center;">
-      feather &nbsp;&middot;&nbsp; fur &nbsp;&middot;&nbsp; shell &nbsp;&middot;&nbsp; skin &nbsp;&middot;&nbsp;
-      tail &nbsp;&middot;&nbsp; trunk &nbsp;&middot;&nbsp; web &nbsp;&middot;&nbsp; wing
-    </div>
-    <p class="blank-line">1. An elephant uses its <input type="text" id="hw01-t2-1" data-save size="10"> to drink water.</p>
-    <p class="blank-line">2. The tortoise hid inside its <input type="text" id="hw01-t2-2" data-save size="10"> when it saw the dog.</p>
-    <p class="blank-line">3. The bird couldn't fly because its <input type="text" id="hw01-t2-3" data-save size="10"> was broken.</p>
-    <p class="blank-line">4. My cat has very soft, grey <input type="text" id="hw01-t2-4" data-save size="10">.</p>
-    <p class="blank-line">5. Dogs move their <input type="text" id="hw01-t2-5" data-save size="10"> when they are happy.</p>
-    <p class="blank-line">6. I found a long white <input type="text" id="hw01-t2-6" data-save size="10"> from a swan on the beach.</p>
-    <p class="blank-line">7. Ducks have a <input type="text" id="hw01-t2-7" data-save size="10"> between their toes to help them swim.</p>
-    <p class="blank-line">8. A frog's <input type="text" id="hw01-t2-8" data-save size="10"> is always wet.</p>
+    <h2>Task 2: Irregular verbs</h2>
+    <div class="instructions">Match each verb with its past simple form. Click a verb on the left, then its past form on the right.</div>
 
-    <div class="instructions" style="margin-top:18px;">Which animal is it? Write the name.</div>
-    <div class="short-answer-line"><span class="label">It has a shell and moves very slowly.</span><input type="text" id="hw01-t2-a1" data-save></div>
-    <div class="short-answer-line"><span class="label">It has a trunk and big ears.</span><input type="text" id="hw01-t2-a2" data-save></div>
-    <div class="short-answer-line"><span class="label">It has feathers and can talk!</span><input type="text" id="hw01-t2-a3" data-save></div>
+    <div class="match-grid" data-match-id="hw01-irregular-verbs">
+      <div class="match-col">
+        <div class="match-item" data-match="1" data-col="a">go</div>
+        <div class="match-item" data-match="2" data-col="a">see</div>
+        <div class="match-item" data-match="3" data-col="a">have</div>
+        <div class="match-item" data-match="4" data-col="a">eat</div>
+        <div class="match-item" data-match="5" data-col="a">get</div>
+        <div class="match-item" data-match="6" data-col="a">buy</div>
+        <div class="match-item" data-match="7" data-col="a">take</div>
+        <div class="match-item" data-match="8" data-col="a">come</div>
+        <div class="match-item" data-match="9" data-col="a">make</div>
+        <div class="match-item" data-match="10" data-col="a">give</div>
+        <div class="match-item" data-match="11" data-col="a">find</div>
+        <div class="match-item" data-match="12" data-col="a">write</div>
+      </div>
+      <div class="match-col">
+        <div class="match-item" data-match="6" data-col="b">bought</div>
+        <div class="match-item" data-match="2" data-col="b">saw</div>
+        <div class="match-item" data-match="9" data-col="b">made</div>
+        <div class="match-item" data-match="1" data-col="b">went</div>
+        <div class="match-item" data-match="11" data-col="b">found</div>
+        <div class="match-item" data-match="4" data-col="b">ate</div>
+        <div class="match-item" data-match="8" data-col="b">came</div>
+        <div class="match-item" data-match="3" data-col="b">had</div>
+        <div class="match-item" data-match="12" data-col="b">wrote</div>
+        <div class="match-item" data-match="5" data-col="b">got</div>
+        <div class="match-item" data-match="10" data-col="b">gave</div>
+        <div class="match-item" data-match="7" data-col="b">took</div>
+      </div>
+    </div>
   </div>
 
+  <!-- ============================================================
+       TASK 3 — past simple gap fill as a chat (regular + irregular,
+       affirmative / negative / questions)
+       ============================================================ -->
   <div class="section">
-    <h2>Write</h2>
-    <div class="instructions">Write 4–5 sentences about an animal rescue you've heard of (real or imagined). Try to use the past simple and past continuous, like in class.</div>
-    <textarea class="free-write" id="hw01-writing-1" data-save placeholder="Start writing here..."></textarea>
-    <div class="word-count" data-wordcount-for="hw01-writing-1">0 words</div>
+    <h2>Task 3: Mia and Sam chat about the weekend</h2>
+    <div class="instructions">Complete the conversation with the past simple form of the verbs in brackets. Some verbs are regular, some are irregular.</div>
+
+    <div class="chat">
+      <div class="chat-line left">
+        <span class="chat-name">Mia</span>
+        <div class="chat-bubble">Hi Sam! What <input type="text" id="hw01-t3-1" data-save size="12"> (you / do) last weekend?</div>
+      </div>
+      <div class="chat-line right">
+        <span class="chat-name">Sam</span>
+        <div class="chat-bubble">On Saturday I <input type="text" id="hw01-t3-2" data-save size="8"> (go) to the cinema with my friends. We <input type="text" id="hw01-t3-3" data-save size="10"> (watch) a very funny film.</div>
+      </div>
+      <div class="chat-line left">
+        <span class="chat-name">Mia</span>
+        <div class="chat-bubble"><input type="text" id="hw01-t3-4" data-save size="12"> (you / enjoy) it?</div>
+      </div>
+      <div class="chat-line right">
+        <span class="chat-name">Sam</span>
+        <div class="chat-bubble">Yes, I <input type="text" id="hw01-t3-5" data-save size="8"> (love) it! But my sister <input type="text" id="hw01-t3-6" data-save size="12"> (not / come) with us because she <input type="text" id="hw01-t3-7" data-save size="8"> (have) a lot of homework.</div>
+      </div>
+      <div class="chat-line left">
+        <span class="chat-name">Mia</span>
+        <div class="chat-bubble">What <input type="text" id="hw01-t3-8" data-save size="12"> (you / do) after the film?</div>
+      </div>
+      <div class="chat-line right">
+        <span class="chat-name">Sam</span>
+        <div class="chat-bubble">We <input type="text" id="hw01-t3-9" data-save size="8"> (eat) pizza in a small café. I <input type="text" id="hw01-t3-10" data-save size="12"> (not / like) it — the pizza was cold!</div>
+      </div>
+      <div class="chat-line left">
+        <span class="chat-name">Mia</span>
+        <div class="chat-bubble">Oh no! What time <input type="text" id="hw01-t3-11" data-save size="12"> (you / get) home?</div>
+      </div>
+      <div class="chat-line right">
+        <span class="chat-name">Sam</span>
+        <div class="chat-bubble">We <input type="text" id="hw01-t3-12" data-save size="10"> (arrive) home at 10 pm and I <input type="text" id="hw01-t3-13" data-save size="8"> (feel) really tired.</div>
+      </div>
+      <div class="chat-line left">
+        <span class="chat-name">Mia</span>
+        <div class="chat-bubble">And <input type="text" id="hw01-t3-14" data-save size="18"> (your brother / play) football on Sunday?</div>
+      </div>
+      <div class="chat-line right">
+        <span class="chat-name">Sam</span>
+        <div class="chat-bubble">No, he <input type="text" id="hw01-t3-15" data-save size="12"> (not / play). He <input type="text" id="hw01-t3-16" data-save size="8"> (stay) at home and <input type="text" id="hw01-t3-17" data-save size="8"> (read) a book. What about you? <input type="text" id="hw01-t3-18" data-save size="12"> (you / see) the new cat café in town?</div>
+      </div>
+      <div class="chat-line left">
+        <span class="chat-name">Mia</span>
+        <div class="chat-bubble">Yes! I <input type="text" id="hw01-t3-19" data-save size="8"> (buy) a coffee there, but I <input type="text" id="hw01-t3-20" data-save size="12"> (not / see) any cats!</div>
+      </div>
+    </div>
   </div>
 
   <div class="lesson-footer-nav">

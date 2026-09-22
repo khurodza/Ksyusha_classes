@@ -141,13 +141,47 @@ const KL = (() => {
       if (!matchId) return;
       const savedKey = "match_" + matchId;
       const matchedPairs = data[savedKey] || [];
-      matchedPairs.forEach((pairKey) => {
-        grid.querySelectorAll(`[data-match="${pairKey}"]`).forEach((el) => {
-          el.classList.add("matched");
-        });
-      });
+      matchedPairs.forEach((pairKey) => joinPair(grid, pairKey));
       wireMatchGrid(grid, lessonId, savedKey, matchedPairs);
     });
+  }
+
+  // Move a correctly matched pair out of the two columns and show
+  // them side by side in a "pairs" list above the grid, so the
+  // student can see which parts belong together.
+  function joinPair(grid, pairKey) {
+    const a = grid.querySelector(`.match-item[data-match="${pairKey}"][data-col="a"]`);
+    const b = grid.querySelector(`.match-item[data-match="${pairKey}"][data-col="b"]`);
+    if (!a || !b) return;
+
+    let pairs = grid.previousElementSibling;
+    if (!pairs || !pairs.classList.contains("match-pairs")) {
+      pairs = document.createElement("div");
+      pairs.className = "match-pairs";
+      grid.parentNode.insertBefore(pairs, grid);
+    }
+
+    const row = document.createElement("div");
+    row.className = "match-pair";
+    row.dataset.match = pairKey;
+    a.classList.remove("selected");
+    b.classList.remove("selected");
+    a.classList.add("matched");
+    b.classList.add("matched");
+    row.appendChild(a);
+    const link = document.createElement("span");
+    link.className = "match-link";
+    link.textContent = "\u2192";
+    row.appendChild(link);
+    row.appendChild(b);
+
+    // keep the pairs list in the original (numeric) order
+    const key = Number(pairKey);
+    const next = Array.from(pairs.children).find((r) => Number(r.dataset.match) > key);
+    pairs.insertBefore(row, next || null);
+
+    // hide the columns once everything is matched
+    if (!grid.querySelector(".match-item")) grid.classList.add("all-matched");
   }
 
   function wireMatchGrid(grid, lessonId, savedKey, matchedPairs) {
@@ -175,9 +209,7 @@ const KL = (() => {
           selected.dataset.col !== item.dataset.col;
 
         if (isPair) {
-          selected.classList.remove("selected");
-          selected.classList.add("matched");
-          item.classList.add("matched");
+          joinPair(grid, item.dataset.match);
           matchedPairs.push(item.dataset.match);
           saveProgress(lessonId, { [savedKey]: matchedPairs });
           selected = null;
