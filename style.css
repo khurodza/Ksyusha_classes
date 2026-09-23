@@ -469,6 +469,43 @@ audio { width: 100%; }
 
 .story-block strong.story-title { color: var(--terracotta-dark); }
 
+/* --- grammar timeline figure (past continuous vs past simple) --- */
+.timeline-figure {
+  margin: 16px 0;
+  padding: 14px 18px 16px;
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.timeline-figure svg {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.timeline-key {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.timeline-key span {
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.96rem;
+  font-weight: 500;
+}
+
+.timeline-key .tk-long  { background: #f2d5ce; }
+.timeline-key .tk-short { background: var(--sky); }
+
 /* --- note box: live speaking activities done with the teacher --- */
 .note-box {
   background: var(--mustard);
