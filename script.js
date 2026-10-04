@@ -96,6 +96,7 @@ const KL = (() => {
   // ----------------------------------------------------------
   function initLessonPage(lessonId) {
     const data = loadProgress(lessonId);
+    initAudioPlayers();
 
     // Plain inputs / textareas: any element with [data-save]
     // and an id gets restored + saved on every change.
@@ -223,6 +224,83 @@ const KL = (() => {
           }, 350);
         }
       });
+    });
+  }
+
+  // ----------------------------------------------------------
+  // Audio players: <div class="audio-player" data-label="Track 3.01">
+  // wrapping a plain <audio controls src="...">. The native
+  // controls stay as a fallback; with JS we swap them for a
+  // play/pause button, a seek bar, the time and a speed toggle.
+  // ----------------------------------------------------------
+  const ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>';
+  const ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
+  const SPEEDS = [1, 0.75];
+
+  function formatTime(sec) {
+    if (!isFinite(sec)) return "0:00";
+    const s = Math.floor(sec);
+    return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+  }
+
+  function initAudioPlayers() {
+    document.querySelectorAll(".audio-player").forEach((box) => {
+      const audio = box.querySelector("audio");
+      if (!audio) return;
+      audio.controls = false;
+
+      box.insertAdjacentHTML("beforeend",
+        `<button type="button" class="ap-play" aria-label="Play">${ICON_PLAY}</button>
+         <div class="ap-body">
+           <div class="ap-top">
+             <span class="ap-label">${escapeHtml(box.dataset.label || "Listen")}</span>
+             <span class="ap-time">0:00 / 0:00</span>
+           </div>
+           <input type="range" class="ap-seek" min="0" max="1000" value="0" aria-label="Seek">
+         </div>
+         <button type="button" class="ap-speed" aria-label="Playback speed">1×</button>`);
+
+      const play = box.querySelector(".ap-play");
+      const seek = box.querySelector(".ap-seek");
+      const time = box.querySelector(".ap-time");
+      const speed = box.querySelector(".ap-speed");
+
+      function render() {
+        const d = audio.duration || 0;
+        const p = d ? (audio.currentTime / d) * 1000 : 0;
+        if (!seek.matches(":active")) seek.value = p;
+        seek.style.setProperty("--p", seek.value / 10 + "%");
+        time.textContent = formatTime(audio.currentTime) + " / " + formatTime(d);
+      }
+
+      function setPlaying(on) {
+        box.classList.toggle("playing", on);
+        play.innerHTML = on ? ICON_PAUSE : ICON_PLAY;
+        play.setAttribute("aria-label", on ? "Pause" : "Play");
+      }
+
+      play.addEventListener("click", () => (audio.paused ? audio.play() : audio.pause()));
+      seek.addEventListener("input", () => {
+        if (audio.duration) audio.currentTime = (seek.value / 1000) * audio.duration;
+        render();
+      });
+      speed.addEventListener("click", () => {
+        const next = SPEEDS[(SPEEDS.indexOf(audio.playbackRate) + 1) % SPEEDS.length];
+        audio.playbackRate = next;
+        speed.textContent = next + "×";
+        speed.classList.toggle("slow", next !== 1);
+      });
+
+      audio.addEventListener("play", () => {
+        // only one track plays at a time
+        document.querySelectorAll(".audio-player audio").forEach((a) => a !== audio && a.pause());
+        setPlaying(true);
+      });
+      audio.addEventListener("pause", () => setPlaying(false));
+      audio.addEventListener("ended", () => { setPlaying(false); audio.currentTime = 0; render(); });
+      audio.addEventListener("timeupdate", render);
+      audio.addEventListener("loadedmetadata", render);
+      render();
     });
   }
 
