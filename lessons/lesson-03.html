@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lesson 03 · Part 1 — Adjectives of Feeling</title>
 <link rel="stylesheet" href="../style.css">
+<script src="../sync.js"></script>
 </head>
 <body>
 
@@ -52,7 +53,7 @@
         <span class="pic-num">1</span>
         <span class="example-tag">Example</span>
         <img src="../images/lesson-03-angry.jpg" alt="A man in glasses with his teeth clenched">
-        <div class="choice-group" id="feel-1">
+        <div class="choice-group" id="feel-1" data-correct="angry">
           <button type="button" class="choice-btn selected" data-value="angry">angry</button>
           <button type="button" class="choice-btn" data-value="bored">bored</button>
         </div>
@@ -60,7 +61,7 @@
       <figure class="feel-card">
         <span class="pic-num">2</span>
         <img src="../images/lesson-03-tired.jpg" alt="A runner bent over after a race, catching his breath">
-        <div class="choice-group" id="feel-2">
+        <div class="choice-group" id="feel-2" data-correct="tired">
           <button type="button" class="choice-btn" data-value="embarrassed">embarrassed</button>
           <button type="button" class="choice-btn" data-value="tired">tired</button>
         </div>
@@ -68,7 +69,7 @@
       <figure class="feel-card">
         <span class="pic-num">3</span>
         <img src="../images/lesson-03-surprised.jpg" alt="A young woman with wide eyes and her mouth open">
-        <div class="choice-group" id="feel-3">
+        <div class="choice-group" id="feel-3" data-correct="surprised">
           <button type="button" class="choice-btn" data-value="surprised">surprised</button>
           <button type="button" class="choice-btn" data-value="worried">worried</button>
         </div>
@@ -76,7 +77,7 @@
       <figure class="feel-card">
         <span class="pic-num">4</span>
         <img src="../images/lesson-03-lonely.jpg" alt="A girl in a hoodie sitting alone on some steps">
-        <div class="choice-group" id="feel-4">
+        <div class="choice-group" id="feel-4" data-correct="lonely">
           <button type="button" class="choice-btn" data-value="lonely">lonely</button>
           <button type="button" class="choice-btn" data-value="tired">tired</button>
         </div>
@@ -84,7 +85,7 @@
       <figure class="feel-card">
         <span class="pic-num">5</span>
         <img src="../images/lesson-03-upset.jpg" alt="A little child crying">
-        <div class="choice-group" id="feel-5">
+        <div class="choice-group" id="feel-5" data-correct="upset">
           <button type="button" class="choice-btn" data-value="afraid">afraid</button>
           <button type="button" class="choice-btn" data-value="upset">upset</button>
         </div>
@@ -92,7 +93,7 @@
       <figure class="feel-card">
         <span class="pic-num">6</span>
         <img src="../images/lesson-03-excited.jpg" alt="A crowd of fans cheering at a football match">
-        <div class="choice-group" id="feel-6">
+        <div class="choice-group" id="feel-6" data-correct="nervous">
           <button type="button" class="choice-btn" data-value="excited">excited</button>
           <button type="button" class="choice-btn" data-value="nervous">nervous</button>
         </div>
@@ -102,10 +103,10 @@
     <div class="instructions" style="margin-top:22px;">2. Complete the sentences with adjectives from Exercise 1.</div>
     <div class="story-block">
       1. Sam's <em>afraid</em> of dogs so he doesn't want to walk through the park.<br>
-      2. Bruno spoke to me today. I felt so <input type="text" id="adj-2" data-save size="12">. My face went red.<br>
-      3. I'm <input type="text" id="adj-3" data-save size="10"> about my exams. What should I do?<br>
-      4. It's Ana's birthday today! She's very <input type="text" id="adj-4" data-save size="10">.<br>
-      5. I'm <input type="text" id="adj-5" data-save size="10">. This documentary isn't very interesting.
+      2. Bruno spoke to me today. I felt so <input type="text" id="adj-2" data-save size="12" data-answer="embarrassed">. My face went red.<br>
+      3. I'm <input type="text" id="adj-3" data-save size="10" data-answer="worried|nervous"> about my exams. What should I do?<br>
+      4. It's Ana's birthday today! She's very <input type="text" id="adj-4" data-save size="10" data-answer="excited">.<br>
+      5. I'm <input type="text" id="adj-5" data-save size="10" data-answer="bored">. This documentary isn't very interesting.
     </div>
 
     <div class="phrase-box sky" data-label="Learn to learn" style="margin-top:26px;">
@@ -149,7 +150,7 @@
     <div class="phrase-box pink" data-label="Explore it!" style="margin-top:30px;">
       <strong>Guess the correct answer.</strong><br>
       If you have <em>didaskaleinophobia</em>, you are afraid of …
-      <div class="choice-group" id="explore-phobia">
+      <div class="choice-group" id="explore-phobia" data-correct="school">
         <button type="button" class="choice-btn" data-value="cheese">a &nbsp;cheese</button>
         <button type="button" class="choice-btn" data-value="spiders">b &nbsp;spiders</button>
         <button type="button" class="choice-btn" data-value="school">c &nbsp;school</button>

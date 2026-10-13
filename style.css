@@ -1260,3 +1260,11 @@ audio { width: 100%; }
   .audio-player { gap: 10px; padding-right: 12px; }
   .ap-play { width: 44px; height: 44px; }
 }
+
+/* answer checking (script.js → initChecking) */
+.check-row { display: flex; align-items: center; gap: 10px; margin: 14px 0 6px; flex-wrap: wrap; }
+.check-score { font-weight: 700; color: #4a6b3a; }
+input.is-right, textarea.is-right { background: #e3f5e1 !important; border-color: #6bbf6b !important; }
+input.is-wrong, textarea.is-wrong { background: #fde4e4 !important; border-color: #e07a7a !important; }
+.choice-btn.is-right { background: #bfe8b8 !important; border-color: #4fa34f !important; }
+.choice-btn.is-wrong { background: #f6c3c3 !important; border-color: #d65a5a !important; }

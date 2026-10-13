@@ -145,6 +145,79 @@ const KL = (() => {
       matchedPairs.forEach((pairKey) => joinPair(grid, pairKey));
       wireMatchGrid(grid, lessonId, savedKey, matchedPairs);
     });
+
+    initChecking();
+  }
+
+  // ----------------------------------------------------------
+  // Answer checking. Gaps carry data-answer="right|also right"
+  // (data-check="contains": the answer only has to contain one of
+  // the words); choice groups carry data-correct="value".
+  // Every exercise with answers gets a "Check ✓ / Try again" pair
+  // at its end. Checking only colours the answers — nothing is
+  // saved or changed. Open questions have no key and stay unmarked.
+  // ----------------------------------------------------------
+  const CONTRACTIONS = { "can't": "cannot", "won't": "will not", "n't": " not", "'m": " am", "'re": " are", "'ve": " have", "'ll": " will" };
+  function norm(str) {
+    let t = String(str).toLowerCase().replace(/[’‘`]/g, "'").replace(/é/g, "e");
+    t = t.replace(/can't|won't/g, (m) => CONTRACTIONS[m]).replace(/n't|'m|'re|'ve|'ll/g, (m) => CONTRACTIONS[m]);
+    return t.replace(/[.,!?;:"“”()…]/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function isRight(el) {
+    const val = norm(el.value);
+    if (!val) return null;
+    const answers = el.dataset.answer.split("|").map(norm);
+    return el.dataset.check === "contains" ? answers.some((a) => val.includes(a)) : answers.includes(val);
+  }
+  function markExercise(items) {
+    items.forEach((el) => {
+      if (el.matches("input, textarea")) {
+        const ok = isRight(el);
+        el.classList.toggle("is-right", ok === true);
+        el.classList.toggle("is-wrong", ok === false);
+      } else {
+        el.querySelectorAll(".choice-btn").forEach((b) => {
+          b.classList.toggle("is-right", b.classList.contains("selected") && b.dataset.value === el.dataset.correct);
+          b.classList.toggle("is-wrong", b.classList.contains("selected") && b.dataset.value !== el.dataset.correct);
+        });
+      }
+    });
+  }
+  function clearMarks(items) {
+    items.forEach((el) => [el, ...el.querySelectorAll(".choice-btn")].forEach((x) => x.classList.remove("is-right", "is-wrong")));
+  }
+  function initChecking() {
+    // group keyed items by exercise: an exercise starts at an .instructions line inside a .section
+    const groups = new Map();
+    document.querySelectorAll("input[data-answer], textarea[data-answer], .choice-group[data-correct]").forEach((el) => {
+      const section = el.closest(".section");
+      if (!section) return;
+      let top = el;
+      while (top.parentElement !== section) top = top.parentElement;
+      let start = top;
+      while (start && !(start.classList && start.classList.contains("instructions"))) start = start.previousElementSibling;
+      const key = start || section;
+      if (!groups.has(key)) groups.set(key, { items: [], last: top, section });
+      const g = groups.get(key);
+      g.items.push(el);
+      g.last = top;
+    });
+    groups.forEach((g) => {
+      let end = g.last;   // put the buttons after the exercise: just before the next instructions line
+      while (end.nextElementSibling && !end.nextElementSibling.classList.contains("instructions")) end = end.nextElementSibling;
+      const row = document.createElement("div");
+      row.className = "check-row";
+      row.innerHTML = '<button type="button" class="btn small check-btn">Check ✓</button>' +
+        '<button type="button" class="btn small secondary">Try again</button><span class="check-score"></span>';
+      end.after(row);
+      const [check, again] = row.querySelectorAll("button"), score = row.querySelector(".check-score");
+      check.addEventListener("click", () => {
+        markExercise(g.items);
+        const right = g.items.filter((el) => el.classList.contains("is-right") || el.querySelector(".is-right")).length;
+        score.textContent = `${right} / ${g.items.length} right`;
+      });
+      again.addEventListener("click", () => { clearMarks(g.items); score.textContent = ""; });
+    });
   }
 
   // Move a correctly matched pair out of the two columns and show

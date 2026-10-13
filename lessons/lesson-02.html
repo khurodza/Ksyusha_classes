@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lesson 02 — Guess What Happened?</title>
 <link rel="stylesheet" href="../style.css">
+<script src="../sync.js"></script>
 </head>
 <body>
 
@@ -71,8 +72,8 @@
     <div class="embed-frame">
       <video controls preload="metadata" src="../media/lesson-02/language-in-action-3.3.mp4"></video>
     </div>
-    <div class="short-answer-line" style="margin-top:14px;"><span class="label">What were they doing in the country?</span><input type="text" id="video-3-3-q1" data-save></div>
-    <div class="short-answer-line"><span class="label">What was her sister holding?</span><input type="text" id="video-3-3-q2" data-save></div>
+    <div class="short-answer-line" style="margin-top:14px;"><span class="label">What were they doing in the country?</span><input type="text" id="video-3-3-q1" data-save data-answer="walk" data-check="contains"></div>
+    <div class="short-answer-line"><span class="label">What was her sister holding?</span><input type="text" id="video-3-3-q2" data-save data-answer="apple" data-check="contains"></div>
 
     <div class="instructions" style="margin-top:22px;">1. Complete the examples in the table.</div>
     <div class="match-grid">
@@ -80,15 +81,15 @@
         <div class="choice-question" style="margin-top:0;">I / he / she / it</div>
         <div class="story-block" style="margin:0;">
           <strong>Was</strong> he <strong>wearing</strong> his wedding clothes?<br>
-          Yes, he <input type="text" id="g1-1" data-save size="6">. /
-          No, he <input type="text" id="g1-2" data-save size="6">.
+          Yes, he <input type="text" id="g1-1" data-save size="6" data-answer="was">. /
+          No, he <input type="text" id="g1-2" data-save size="6" data-answer="wasn&#x27;t">.
         </div>
       </div>
       <div class="match-col">
         <div class="choice-question" style="margin-top:0;">you / we / they</div>
         <div class="story-block" style="margin:0;">
-          <input type="text" id="g1-3" data-save size="6"> the children <strong>standing</strong> close to the lake?<br>
-          Yes, they <input type="text" id="g1-4" data-save size="6">. / No, they <strong>weren't</strong>.
+          <input type="text" id="g1-3" data-save size="6" data-answer="Were"> the children <strong>standing</strong> close to the lake?<br>
+          Yes, they <input type="text" id="g1-4" data-save size="6" data-answer="were">. / No, they <strong>weren't</strong>.
         </div>
       </div>
     </div>
@@ -121,14 +122,14 @@
           <span class="speaker a">A</span>
           <div class="dlg-body">
             <span class="dlg-prompt">What / your friends / at 7 am this morning? <span class="verb">(do)</span></span>
-            <input type="text" class="dlg-answer" id="g2-2a" data-save>
+            <input type="text" class="dlg-answer" id="g2-2a" data-save data-answer="What were your friends doing at 7 am this morning?|What were your friends doing at 7 this morning?|What were your friends doing at seven am this morning?">
           </div>
         </div>
         <div class="dlg-line">
           <span class="speaker b">B</span>
           <div class="dlg-body">
             <span class="dlg-cue">get up</span>
-            <input type="text" class="dlg-answer" id="g2-2b" data-save>
+            <input type="text" class="dlg-answer" id="g2-2b" data-save data-answer="They were getting up.">
           </div>
         </div>
       </div>
@@ -139,14 +140,14 @@
           <span class="speaker a">A</span>
           <div class="dlg-body">
             <span class="dlg-prompt">What / you / yesterday? <span class="verb">(wear)</span></span>
-            <input type="text" class="dlg-answer" id="g2-3a" data-save>
+            <input type="text" class="dlg-answer" id="g2-3a" data-save data-answer="What were you wearing yesterday?">
           </div>
         </div>
         <div class="dlg-line">
           <span class="speaker b">B</span>
           <div class="dlg-body">
             <span class="dlg-cue">jeans and a hoodie</span>
-            <input type="text" class="dlg-answer" id="g2-3b" data-save>
+            <input type="text" class="dlg-answer" id="g2-3b" data-save data-answer="I was wearing jeans and a hoodie.">
           </div>
         </div>
       </div>
@@ -157,14 +158,14 @@
           <span class="speaker a">A</span>
           <div class="dlg-body">
             <span class="dlg-prompt">your best friend / at 5 pm yesterday? <span class="verb">(chat online)</span></span>
-            <input type="text" class="dlg-answer" id="g2-4a" data-save>
+            <input type="text" class="dlg-answer" id="g2-4a" data-save data-answer="Was your best friend chatting online at 5 pm yesterday?|Was your best friend chatting online at five pm yesterday?">
           </div>
         </div>
         <div class="dlg-line">
           <span class="speaker b">B</span>
           <div class="dlg-body">
             <span class="dlg-cue no">✗ play basketball</span>
-            <input type="text" class="dlg-answer" id="g2-4b" data-save>
+            <input type="text" class="dlg-answer" id="g2-4b" data-save data-answer="No, he wasn&#x27;t. He was playing basketball.|No, she wasn&#x27;t. She was playing basketball.|No, they weren&#x27;t. They were playing basketball.">
           </div>
         </div>
       </div>
@@ -180,8 +181,8 @@
     <div class="instructions">3. Complete the examples with the correct form of the verb in brackets.</div>
     <div class="story-block">
       <strong>When</strong> Clayton <strong>jumped</strong> into the water, he
-      <input type="text" id="g3-1" data-save size="12"> (wear) his wedding clothes.<br><br>
-      <strong>While</strong> the photographer <input type="text" id="g3-2" data-save size="12"> (prepare)
+      <input type="text" id="g3-1" data-save size="12" data-answer="was wearing"> (wear) his wedding clothes.<br><br>
+      <strong>While</strong> the photographer <input type="text" id="g3-2" data-save size="12" data-answer="was preparing"> (prepare)
       his camera, Clayton <strong>noticed</strong> three children.
     </div>
 
@@ -228,17 +229,17 @@
     <div class="instructions" style="margin-top:22px;">4. Complete the text with the past simple or past continuous. Then check with your teacher.</div>
     <div class="story-block">
       I <em>was walking</em> (walk) to the bus stop one afternoon when I
-      <input type="text" id="g4-2" data-save size="10"> (fall) over on the icy street.
-      I <input type="text" id="g4-3" data-save size="12"> (carry) a heavy bag with all my school things
-      and I <input type="text" id="g4-4" data-save size="10"> (break) my glasses.
-      I <input type="text" id="g4-5" data-save size="10"> (feel) very embarrassed.<br><br>
-      A lot of other people <input type="text" id="g4-6" data-save size="12"> (wait) for the bus,
-      but they <input type="text" id="g4-7" data-save size="12"> (not help) me. However, one woman
-      <input type="text" id="g4-8" data-save size="12"> (pick up) my bag and glasses and she
-      <input type="text" id="g4-9" data-save size="10"> (find) an empty seat for me. While I
-      <input type="text" id="g4-10" data-save size="12"> (sit) there, she
-      <input type="text" id="g4-11" data-save size="10"> (clean) my face and gave me some water.
-      But when I <input type="text" id="g4-12" data-save size="10"> (look) for her a few minutes later,
+      <input type="text" id="g4-2" data-save size="10" data-answer="fell"> (fall) over on the icy street.
+      I <input type="text" id="g4-3" data-save size="12" data-answer="was carrying"> (carry) a heavy bag with all my school things
+      and I <input type="text" id="g4-4" data-save size="10" data-answer="broke"> (break) my glasses.
+      I <input type="text" id="g4-5" data-save size="10" data-answer="felt"> (feel) very embarrassed.<br><br>
+      A lot of other people <input type="text" id="g4-6" data-save size="12" data-answer="were waiting"> (wait) for the bus,
+      but they <input type="text" id="g4-7" data-save size="12" data-answer="didn&#x27;t help"> (not help) me. However, one woman
+      <input type="text" id="g4-8" data-save size="12" data-answer="picked up"> (pick up) my bag and glasses and she
+      <input type="text" id="g4-9" data-save size="10" data-answer="found"> (find) an empty seat for me. While I
+      <input type="text" id="g4-10" data-save size="12" data-answer="was sitting"> (sit) there, she
+      <input type="text" id="g4-11" data-save size="10" data-answer="cleaned"> (clean) my face and gave me some water.
+      But when I <input type="text" id="g4-12" data-save size="10" data-answer="looked"> (look) for her a few minutes later,
       there was no one there.
     </div>
 
@@ -278,19 +279,19 @@
       <p><strong class="story-title">DAVID</strong> &nbsp;<em>Guess what happened</em> yesterday?</p>
       <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;No idea.</p>
       <p><strong class="story-title">DAVID</strong> &nbsp;Well, it didn't happen to me,
-        <input type="text" id="sp2-2" data-save size="16"> Adrian.</p>
+        <input type="text" id="sp2-2" data-save size="16" data-answer="it happened to"> Adrian.</p>
       <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;Go on.</p>
       <p><strong class="story-title">DAVID</strong> &nbsp;He was at the new shopping centre.</p>
       <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;You're kidding!
-        <input type="text" id="sp2-3" data-save size="18"> a shopping centre? He hates shopping.</p>
+        <input type="text" id="sp2-3" data-save size="18" data-answer="What was he doing in"> a shopping centre? He hates shopping.</p>
       <p><strong class="story-title">DAVID</strong> &nbsp;He was looking for new trainers.</p>
-      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;<input type="text" id="sp2-4" data-save size="10"></p>
+      <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;<input type="text" id="sp2-4" data-save size="10" data-answer="Really?"></p>
       <p><strong class="story-title">DAVID</strong> &nbsp;Yes, really. Now please stop interrupting.
         While he was looking at the trainers, someone bumped into him.</p>
       <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;Who was it?</p>
       <p><strong class="story-title">DAVID</strong> &nbsp;It was Neymar!</p>
       <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;No way!
-        <input type="text" id="sp2-5" data-save size="18"></p>
+        <input type="text" id="sp2-5" data-save size="18" data-answer="That&#x27;s amazing!|That&#x27;s incredible!|That is amazing!|That is incredible!"></p>
       <p><strong class="story-title">DAVID</strong> &nbsp;I know.</p>
       <p><strong style="color:var(--sky-dark);">LAURA</strong> &nbsp;Did he take a photo?</p>
       <p><strong class="story-title">DAVID</strong> &nbsp;No, he didn't. He was too embarrassed. Can you believe it?</p>
@@ -302,8 +303,8 @@
       / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
     </p>
 
-    <div class="short-answer-line"><span class="label">Who is the story about?</span><input type="text" id="sp1-who" data-save></div>
-    <div class="short-answer-line"><span class="label">What was he doing?</span><input type="text" id="sp1-doing" data-save></div>
+    <div class="short-answer-line"><span class="label">Who is the story about?</span><input type="text" id="sp1-who" data-save data-answer="adrian" data-check="contains"></div>
+    <div class="short-answer-line"><span class="label">What was he doing?</span><input type="text" id="sp1-doing" data-save data-answer="trainers|shopping" data-check="contains"></div>
 
     <div class="instructions" style="margin-top:22px;">2. Complete the conversation above with phrases from the <em>Useful language</em> box.</div>
 
