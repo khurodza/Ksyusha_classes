@@ -204,7 +204,7 @@ const KL = (() => {
     });
     groups.forEach((g) => {
       let end = g.last;   // put the buttons after the exercise: just before the next instructions line
-      while (end.nextElementSibling && !end.nextElementSibling.classList.contains("instructions")) end = end.nextElementSibling;
+      while (end.nextElementSibling && !end.nextElementSibling.matches(".instructions, .part-subhead")) end = end.nextElementSibling;
       const row = document.createElement("div");
       row.className = "check-row";
       row.innerHTML = '<button type="button" class="btn small check-btn">Check ✓</button>' +
