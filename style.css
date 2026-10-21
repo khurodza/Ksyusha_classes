@@ -1001,7 +1001,8 @@ audio { width: 100%; }
   font-weight: 700;
 }
 
-.feel-card .example-tag {
+.feel-card .example-tag,
+.snap-card .example-tag {
   position: absolute;
   top: -14px;
   right: 16px;
@@ -1432,4 +1433,224 @@ input.is-wrong, textarea.is-wrong { background: #fde4e4 !important; border-color
   .letter-grid { grid-template-columns: 1fr; }
   .email-body { flex-direction: column-reverse; }
   .email-body img { margin: 14px 14px 0; }
+}
+
+/* --- dice warm-up: six question cards, "Roll" lights one up ---
+   .dice-card.rolling while it spins, .picked when it lands,
+   .asked for cards already answered. */
+.dice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.dice-card {
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 34px 14px 14px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: transform 0.12s, background 0.12s, opacity 0.2s;
+}
+
+.dice-card .dice-face {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.dice-card .dice-hint {
+  display: block;
+  margin-top: 6px;
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.dice-card.rolling { background: #fff8ec; transform: scale(1.03); }
+.dice-card.picked  { background: var(--mustard); transform: scale(1.05); box-shadow: var(--shadow); }
+.dice-card.asked   { opacity: 0.45; }
+
+.dice-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.dice-result { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.1rem; }
+
+/* round portrait next to a gap-fill text */
+.round-pic {
+  float: right;
+  width: 120px;
+  height: 120px;
+  margin: 0 0 10px 14px;
+  border: 3px solid var(--terracotta);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* self-assessment rows: statement + three faces */
+.self-check { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 10px 0; border-bottom: 2px dashed var(--ink-soft); }
+.self-check:last-child { border-bottom: none; }
+.self-check .choice-group { margin: 0; }
+.self-check .choice-btn { padding: 6px 14px; }
+
+/* past continuous snapshots: a scene, ✗/✓ cues, two sentences */
+.snap-clock {
+  display: inline-block;
+  margin: 6px 0 4px;
+  padding: 4px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--mustard);
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+}
+
+.snap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 16px;
+  margin: 26px 0 12px;
+}
+
+.snap-card {
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 20px 16px 14px;
+}
+
+.snap-pic { font-size: 2.6rem; line-height: 1; text-align: center; margin: 4px 0 10px; }
+
+.snap-cue { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 10px; }
+.snap-cue span { padding: 3px 10px; border: 2px solid var(--ink); border-radius: 999px; font-size: 0.88rem; font-weight: 600; }
+.snap-cue .cue-no  { background: #fbe4e8; }
+.snap-cue .cue-yes { background: #e3f4e1; }
+
+.snap-line { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+.snap-mark {
+  flex: 0 0 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+}
+.snap-line.no  .snap-mark { background: var(--terracotta); }
+.snap-line.yes .snap-mark { background: #5a9e57; }
+
+.snap-line input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  border-bottom: 2px solid var(--ink);
+  border-radius: 6px 6px 0 0;
+  background: #fdf3df;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--terracotta-dark);
+  padding: 4px 8px;
+}
+.snap-line input[type="text"]:focus { outline: none; background: #fff8ec; border-bottom-color: var(--terracotta); }
+.snap-line input::placeholder { font-weight: 500; color: var(--ink-soft); }
+.snap-model { font-weight: 600; font-style: italic; }
+
+@media (max-width: 640px) {
+  .snap-grid { grid-template-columns: 1fr; }
+  .dice-grid { grid-template-columns: 1fr 1fr; }
+  .round-pic { width: 90px; height: 90px; }
+}
+
+/* gap with a given first letter: <span class="first-letter">w</span><input> */
+.first-letter { font-weight: 700; color: var(--terracotta-dark); margin-right: -2px; }
+.blank-line .first-letter + input[type="text"] { min-width: 110px; }
+
+/* conversation with an a/b/c choice inside each gap */
+.convo p { display: flex; gap: 12px; margin: 8px 0; line-height: 1.9; }
+.convo .who { flex: 0 0 56px; font-weight: 700; color: var(--ink-soft); letter-spacing: 0.03em; }
+.convo .who.jake  { color: var(--sky-dark); }
+.convo .who.bella { color: var(--terracotta); }
+.choice-group.inline { display: inline-flex; gap: 4px; margin: 0 4px; vertical-align: middle; }
+.choice-group.inline .choice-btn { padding: 2px 10px; font-size: 0.86rem; }
+
+/* speaking cards: a big question in a speech bubble + sentence starters */
+.talk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px 18px;
+  margin: 26px 0 12px;
+}
+
+.talk-card {
+  position: relative;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 22px 18px 16px;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s;
+}
+.talk-card:hover { transform: translateY(-3px) rotate(-0.5deg); }
+.talk-card.pink    { background: #fbe4e8; }
+.talk-card.sky     { background: #e3f2f9; }
+.talk-card.mustard { background: #fbecc4; }
+
+/* speech-bubble tail */
+.talk-card::after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  left: 34px;
+  width: 22px;
+  height: 22px;
+  background: inherit;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: rotate(45deg);
+}
+
+.talk-num {
+  position: absolute;
+  top: -18px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: #fff;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+}
+.talk-card.sky .talk-num     { background: var(--sky-dark); }
+.talk-card.mustard .talk-num { background: var(--mustard); color: var(--ink); }
+
+.talk-emoji { font-size: 1.9rem; letter-spacing: 6px; text-align: right; margin-top: -6px; }
+
+.talk-q {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.22rem;
+  line-height: 1.3;
+  margin: 6px 0 14px;
+}
+
+.talk-starters { display: flex; flex-wrap: wrap; gap: 6px; }
+.talk-starters span {
+  padding: 4px 12px;
+  border: 2px dashed var(--ink-soft);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-style: italic;
 }

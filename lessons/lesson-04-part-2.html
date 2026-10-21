@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 04 · Part 2 — A radio phone-in</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../sync.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="site-title" href="../index.html" style="text-decoration:none;">Ksyusha's English Lessons</a>
+  <nav class="topnav">
+    <a class="btn small secondary" href="../index.html">&larr; Home</a>
+    <a href="../homework.html">Homework</a>
+  </nav>
+  <div class="greeting" id="greeting"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Lesson 04 — A radio phone-in</h1>
+    <p>Part 2 of 2: listening from the workbook (Own it! 2, Unit 3, page 27): Bruno's story about a funny thing that happened at the bus stop.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Listening: A radio phone-in</span>
+      <span class="hero-tag">Vocabulary: Prepositions of movement</span>
+    </div>
+    <nav class="part-jump">
+      <a class="btn small secondary" href="lesson-04.html">Part 1 · Unit 3 Review</a>
+      <a class="btn small" aria-current="page" href="lesson-04-part-2.html">Part 2 · A radio phone-in</a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       WORKBOOK p.27 — LISTENING: a radio phone-in
+       ============================================================ -->
+  <div class="section part part-2" id="phone-in">
+    <div class="part-head">
+      <span class="part-tag">Listening</span>
+      <h2>A radio phone-in</h2>
+      <p class="part-sub">Predict · Listen · Choose · Discuss</p>
+    </div>
+
+    <div class="instructions">1. Look at the picture. What do you think the story is about? Predict the words you might hear.</div>
+    <img class="wide-pic" src="../images/lesson-03-wb-phonein.jpg" alt="A boy watching a policeman with a stick chase a man with a bag along the street">
+    <textarea class="free-write" id="phonein-predict" data-save style="min-height:80px;"
+              placeholder="I think the story is about ... Words: police, ..."></textarea>
+
+    <div class="instructions" style="margin-top:22px;">2. Listen to Bruno's story. Do you hear any of your words from Exercise 1?</div>
+    <div class="audio-player" data-label="Bruno's story">
+      <audio controls preload="metadata" src="../media/lesson-04/wb-audio-3.01.mp3"></audio>
+    </div>
+    <div class="short-answer-line" style="margin-top:12px;"><span class="label">Words I heard:</span><input type="text" id="phonein-heard-wb" data-save></div>
+
+    <div class="instructions" style="margin-top:22px;">3. Listen again and choose the correct answers.</div>
+    <div class="audio-player" data-label="Bruno's story">
+      <audio controls preload="metadata" src="../media/lesson-04/wb-audio-3.01.mp3"></audio>
+    </div>
+    <div class="choice-question">1. The radio programme is about … things that happen to people. <span style="font-weight:500; color:var(--ink-soft);">(example)</span></div>
+    <div class="choice-group" id="radio-6-1" data-correct="funny">
+      <button type="button" class="choice-btn" data-value="dangerous">dangerous</button>
+      <button type="button" class="choice-btn selected" data-value="funny">funny</button>
+      <button type="button" class="choice-btn" data-value="embarrassing">embarrassing</button>
+    </div>
+
+    <div class="choice-question">2. When Bruno got off the bus, a man was running … .</div>
+    <div class="choice-group" id="radio-6-2" data-correct="out of a bank">
+      <button type="button" class="choice-btn" data-value="across the road">across the road</button>
+      <button type="button" class="choice-btn" data-value="into a bank">into a bank</button>
+      <button type="button" class="choice-btn" data-value="out of a bank">out of a bank</button>
+    </div>
+
+    <div class="choice-question">3. The man had a … .</div>
+    <div class="choice-group" id="radio-6-3" data-correct="bag">
+      <button type="button" class="choice-btn" data-value="knife in a bag">knife in a bag</button>
+      <button type="button" class="choice-btn" data-value="knife">knife</button>
+      <button type="button" class="choice-btn" data-value="bag">bag</button>
+    </div>
+
+    <div class="choice-question">4. The alarm bells were ringing … .</div>
+    <div class="choice-group" id="radio-6-4" data-correct="inside the bank">
+      <button type="button" class="choice-btn" data-value="in the bus">in the bus</button>
+      <button type="button" class="choice-btn" data-value="inside the bank">inside the bank</button>
+      <button type="button" class="choice-btn" data-value="outside the bank">outside the bank</button>
+    </div>
+
+    <div class="choice-question">5. The people at the bus stop were … .</div>
+    <div class="choice-group" id="radio-6-5" data-correct="not doing anything">
+      <button type="button" class="choice-btn" data-value="helping the man">helping the man</button>
+      <button type="button" class="choice-btn" data-value="not doing anything">not doing anything</button>
+      <button type="button" class="choice-btn" data-value="helping the policeman">helping the policeman</button>
+    </div>
+
+    <div class="choice-question">6. The policeman caught the man because … stopped him.</div>
+    <div class="choice-group" id="radio-6-6" data-correct="some dogs">
+      <button type="button" class="choice-btn" data-value="a woman">a woman</button>
+      <button type="button" class="choice-btn" data-value="Bruno">Bruno</button>
+      <button type="button" class="choice-btn" data-value="some dogs">some dogs</button>
+    </div>
+
+    <div class="instructions" style="margin-top:22px;">4. Let's talk! 🗣️ Answer the questions with your teacher. Use the phrases to help you.</div>
+    <div class="talk-grid">
+      <div class="talk-card pink">
+        <span class="talk-num">1</span>
+        <div class="talk-emoji" aria-hidden="true">😲 😨 😂</div>
+        <p class="talk-q">How do you think the people at the bus stop felt?</p>
+        <div class="talk-starters">
+          <span>I think they felt …</span>
+          <span>They were … because …</span>
+          <span>Maybe they were afraid / surprised …</span>
+        </div>
+      </div>
+      <div class="talk-card sky">
+        <span class="talk-num">2</span>
+        <div class="talk-emoji" aria-hidden="true">👍 🤔 👎</div>
+        <p class="talk-q">Did they do the right thing? Why / Why not?</p>
+        <div class="talk-starters">
+          <span>Yes, they did, because …</span>
+          <span>No, they didn't, because …</span>
+          <span>They should …</span>
+        </div>
+      </div>
+      <div class="talk-card mustard">
+        <span class="talk-num">★</span>
+        <div class="talk-emoji" aria-hidden="true">🚌 👀</div>
+        <p class="talk-q">Bonus: Did you ever see something funny or strange in the street? What were you doing?</p>
+        <div class="talk-starters">
+          <span>Once, I was …ing when I saw …</span>
+          <span>It was so funny!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="photo-credit">Illustration: <em>Own it! 2</em> Workbook (Cambridge University Press), page 27.</p>
+
+  <div class="lesson-footer-nav">
+    <a class="btn secondary" href="lesson-04.html">&larr; Part 1: Unit 3 Review</a>
+    <a class="btn secondary" href="../index.html">Back to all lessons</a>
+  </div>
+
+</div>
+
+<script src="../script.js"></script>
+<script>
+  const LESSON_ID = "lesson-04";
+  KL.initHomePage();
+  KL.initLessonPage(LESSON_ID);
+</script>
+</body>
+</html>

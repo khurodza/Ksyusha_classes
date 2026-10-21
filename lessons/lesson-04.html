@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 04 — A radio phone-in</title>
+<title>Lesson 04 · Part 1 — Unit 3 Review</title>
 <link rel="stylesheet" href="../style.css">
 <script src="../sync.js"></script>
 </head>
@@ -21,86 +21,233 @@
 <div class="wrap">
 
   <div class="hero">
-    <h1>Lesson 04 — A radio phone-in</h1>
-    <p>Listening from the workbook (Own it! 2, Unit 3, page 27): Bruno's story about a funny thing that happened at the bus stop.</p>
+    <h1>Lesson 04 — Unit 3 Review</h1>
+    <p>Part 1 of 2: let's check what you remember from Unit 3 — feelings, prepositions of movement, and the past simple and past continuous (Own it! 2, Student's Book page 44).</p>
     <div class="hero-tags">
-      <span class="hero-tag">Listening: A radio phone-in</span>
-      <span class="hero-tag">Vocabulary: Prepositions of movement</span>
+      <span class="hero-tag">Warm-up: my last week</span>
+      <span class="hero-tag">Review: Adjectives of feeling</span>
+      <span class="hero-tag">Review: Prepositions of movement</span>
+      <span class="hero-tag">Review: Past simple &amp; continuous</span>
+    </div>
+    <nav class="part-jump">
+      <a class="btn small" aria-current="page" href="lesson-04.html">Part 1 · Unit 3 Review</a>
+      <a class="btn small secondary" href="lesson-04-part-2.html">Part 2 · A radio phone-in</a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       WARM-UP: my last week (past simple + past continuous)
+       ============================================================ -->
+  <div class="section">
+    <h2>Warm-up: my last week 🎲</h2>
+
+    <div class="phrase-box" data-label="Remember">
+      <strong>Past simple</strong> — a finished action: <em>I <u>watched</u> a film on Saturday.</em><br>
+      <strong>Past continuous</strong> — an action in progress at a time: <em>At 8 pm I <u>was watching</u> a film.</em>
+    </div>
+
+    <div class="instructions">1. Roll the dice! Answer the question about your last week. Then ask your teacher the same question.</div>
+    <div class="dice-controls">
+      <button type="button" class="btn" id="dice-roll">🎲 Roll the dice</button>
+      <span class="dice-result" id="dice-result" aria-live="polite"></span>
+    </div>
+
+    <div class="dice-grid" id="dice-grid">
+      <div class="dice-card" data-num="1"><span class="dice-face">⚀</span>What did you do last weekend?<span class="dice-hint">Last weekend I …</span></div>
+      <div class="dice-card" data-num="2"><span class="dice-face">⚁</span>What were you doing at 7 pm on Saturday?<span class="dice-hint">At 7 pm I was …ing</span></div>
+      <div class="dice-card" data-num="3"><span class="dice-face">⚂</span>What did you eat for dinner on Sunday? Was it nice?<span class="dice-hint">I ate … It was …</span></div>
+      <div class="dice-card" data-num="4"><span class="dice-face">⚃</span>What were you wearing on Monday?<span class="dice-hint">I was wearing …</span></div>
+      <div class="dice-card" data-num="5"><span class="dice-face">⚄</span>What was the best thing that happened last week? How did you feel?<span class="dice-hint">The best thing was … I felt …</span></div>
+      <div class="dice-card" data-num="6"><span class="dice-face">⚅</span>What were you doing when your phone rang / when someone called you?<span class="dice-hint">I was …ing when …</span></div>
+    </div>
+
+    <div class="instructions" style="margin-top:22px;">2. Two truths and a lie! Write three sentences about your last week. Two are true and one is false. Can your teacher guess the lie?</div>
+    <div class="story-block"><em>On Tuesday I went to the cinema. On Wednesday at 6 pm I was swimming in the sea. I was reading a book when my cat jumped on me.</em></div>
+    <div class="short-answer-line"><span class="label">Sentence 1:</span><input type="text" id="wu-truth-1" data-save placeholder="On ... I ..."></div>
+    <div class="short-answer-line"><span class="label">Sentence 2:</span><input type="text" id="wu-truth-2" data-save placeholder="At ... I was ...ing"></div>
+    <div class="short-answer-line"><span class="label">Sentence 3:</span><input type="text" id="wu-truth-3" data-save placeholder="I was ...ing when ..."></div>
+    <div class="note-box" style="margin-top:12px;">Now it's your turn: your teacher says three sentences. Which one is the lie? Ask questions to find out! <em>Did you really …? What were you doing …?</em></div>
+  </div>
+
+  <!-- ============================================================
+       REVIEW — VOCABULARY (SB p.44, Ex 1–2)
+       ============================================================ -->
+  <div class="section part part-1" id="review-vocab">
+    <div class="part-head">
+      <span class="part-tag">Review</span>
+      <h2>Vocabulary</h2>
+      <p class="part-sub">Adjectives of feeling · Prepositions of movement</p>
+    </div>
+
+    <div class="instructions">1. Complete the sentences with the adjectives.</div>
+    <div class="word-box"><span>afraid</span><span>embarrassed</span><span>surprised</span><span>tired</span><span>upset</span></div>
+    <p class="blank-line">1. Elsa looks <input type="text" id="rv1-1" data-save data-answer="upset"> and she's crying.</p>
+    <p class="blank-line">2. I can't believe I won! I'm really <input type="text" id="rv1-2" data-save data-answer="surprised">.</p>
+    <p class="blank-line">3. My dad is <input type="text" id="rv1-3" data-save data-answer="afraid"> of heights. He can't go up tall buildings.</p>
+    <p class="blank-line">4. I forgot my friend's birthday. I was so <input type="text" id="rv1-4" data-save data-answer="embarrassed">!</p>
+    <p class="blank-line">5. I'm really <input type="text" id="rv1-5" data-save data-answer="tired">. I didn't sleep much.</p>
+
+    <div class="instructions" style="margin-top:22px;">2. Complete the story with the prepositions.</div>
+    <div class="word-box"><span>across</span><span>between</span><span>down</span><span>into</span><span>out of</span><span>through</span><span>under</span><span>up</span></div>
+    <div class="story-block">
+      <img class="wide-pic" src="../images/lesson-04-review-cat.jpg" alt="A tabby cat walking across a stone pavement" style="max-width:300px; margin-top:0;">
+      Tiger the cat went <sup>1</sup><input type="text" id="rv2-1" data-save size="7" data-answer="out of"> the front door and walked
+      <sup>2</sup><input type="text" id="rv2-2" data-save size="7" data-answer="between"> two cars <sup>3</sup><input type="text" id="rv2-3" data-save size="7" data-answer="across"> the road. He went
+      <sup>4</sup><input type="text" id="rv2-4" data-save size="7" data-answer="into"> the park and climbed <sup>5</sup><input type="text" id="rv2-5" data-save size="7" data-answer="up"> a tree. Then
+      a mouse appeared. 'Lunch!' thought Tiger. He climbed <sup>6</sup><input type="text" id="rv2-6" data-save size="7" data-answer="down"> the tree and
+      followed it. The mouse ran <sup>7</sup><input type="text" id="rv2-7" data-save size="7" data-answer="through"> the grass and
+      then disappeared <sup>8</sup><input type="text" id="rv2-8" data-save size="7" data-answer="under"> a stone. 'Maybe I'll have lunch at home today,' said Tiger.
     </div>
   </div>
 
   <!-- ============================================================
-       WORKBOOK p.27 — LISTENING: a radio phone-in
+       REVIEW — LANGUAGE IN ACTION (SB p.44, Ex 3–5)
        ============================================================ -->
-  <div class="section part part-2" id="phone-in">
+  <div class="section part part-2" id="review-grammar">
     <div class="part-head">
-      <span class="part-tag">Listening</span>
-      <h2>A radio phone-in</h2>
-      <p class="part-sub">Predict · Listen · Choose · Discuss</p>
+      <span class="part-tag">Review</span>
+      <h2>Language in action</h2>
+      <p class="part-sub">Past continuous · Past simple and past continuous</p>
     </div>
 
-    <div class="instructions">1. Look at the picture. What do you think the story is about? Predict the words you might hear.</div>
-    <img class="wide-pic" src="../images/lesson-03-wb-phonein.jpg" alt="A boy watching a policeman with a stick chase a man with a bag along the street">
-    <textarea class="free-write" id="phonein-predict" data-save style="min-height:80px;"
-              placeholder="I think the story is about ... Words: police, ..."></textarea>
-
-    <div class="instructions" style="margin-top:22px;">2. Listen to Bruno's story (Workbook track 3.01). Do you hear any of your words from Exercise 1?</div>
-    <div class="note-box">🎧 Your teacher will play the recording.</div>
-    <div class="short-answer-line" style="margin-top:12px;"><span class="label">Words I heard:</span><input type="text" id="phonein-heard-wb" data-save></div>
-
-    <div class="instructions" style="margin-top:22px;">3. Listen again and choose the correct answers.</div>
-    <div class="choice-question">1. The radio programme is about … things that happen to people. <span style="font-weight:500; color:var(--ink-soft);">(example)</span></div>
-    <div class="choice-group" id="radio-6-1" data-correct="funny">
-      <button type="button" class="choice-btn" data-value="dangerous">dangerous</button>
-      <button type="button" class="choice-btn selected" data-value="funny">funny</button>
-      <button type="button" class="choice-btn" data-value="embarrassing">embarrassing</button>
+    <div class="instructions">3. What was happening at 10.30 am yesterday? Look at the snapshots. Write two sentences in the past continuous: what <strong>wasn't</strong> happening ✗ and what <strong>was</strong> happening ✓.</div>
+    <div class="snap-clock">🕥 Yesterday, 10.30 am</div>
+    <div class="snap-grid">
+      <div class="snap-card">
+        <span class="dialogue-num">1</span>
+        <span class="example-tag">Example</span>
+        <div class="snap-pic" role="img" aria-label="rain falling">🌧️</div>
+        <div class="snap-cue"><span class="cue-no">✗ it / not snow</span><span class="cue-yes">✓ it / rain</span></div>
+          <p class="snap-line no"><span class="snap-mark">✗</span><span class="snap-model">It wasn't snowing.</span></p>
+          <p class="snap-line yes"><span class="snap-mark">✓</span><span class="snap-model">It was raining.</span></p>
+      </div>
+      <div class="snap-card">
+        <span class="dialogue-num">2</span>
+        <div class="snap-pic" role="img" aria-label="friends chatting">💬</div>
+        <div class="snap-cue"><span class="cue-no">✗ I / not study</span><span class="cue-yes">✓ I / chat / with my friends</span></div>
+          <p class="snap-line no"><span class="snap-mark">✗</span><input type="text" id="rv3-2a" data-save data-answer="I wasn't studying" placeholder="... wasn't / weren't ...ing"></p>
+          <p class="snap-line yes"><span class="snap-mark">✓</span><input type="text" id="rv3-2b" data-save data-answer="I was chatting with my friends" placeholder="... was / were ...ing"></p>
+      </div>
+      <div class="snap-card">
+        <span class="dialogue-num">3</span>
+        <div class="snap-pic" role="img" aria-label="headphones and music">🎧</div>
+        <div class="snap-cue"><span class="cue-no">✗ Alex / not read / a book</span><span class="cue-yes">✓ Alex / listen / to music</span></div>
+          <p class="snap-line no"><span class="snap-mark">✗</span><input type="text" id="rv3-3a" data-save data-answer="Alex wasn't reading a book|He wasn't reading a book" placeholder="... wasn't / weren't ...ing"></p>
+          <p class="snap-line yes"><span class="snap-mark">✓</span><input type="text" id="rv3-3b" data-save data-answer="He was listening to music|Alex was listening to music" placeholder="... was / were ...ing"></p>
+      </div>
+      <div class="snap-card">
+        <span class="dialogue-num">4</span>
+        <div class="snap-pic" role="img" aria-label="a snack">🥪</div>
+        <div class="snap-cue"><span class="cue-no">✗ Eva and Helen / not talk</span><span class="cue-yes">✓ Eva and Helen / have / a snack</span></div>
+          <p class="snap-line no"><span class="snap-mark">✗</span><input type="text" id="rv3-4a" data-save data-answer="Eva and Helen weren't talking|They weren't talking" placeholder="... wasn't / weren't ...ing"></p>
+          <p class="snap-line yes"><span class="snap-mark">✓</span><input type="text" id="rv3-4b" data-save data-answer="They were having a snack|Eva and Helen were having a snack" placeholder="... was / were ...ing"></p>
+      </div>
     </div>
 
-    <div class="choice-question">2. When Bruno got off the bus, a man was running … .</div>
-    <div class="choice-group" id="radio-6-2" data-correct="out of a bank">
-      <button type="button" class="choice-btn" data-value="across the road">across the road</button>
-      <button type="button" class="choice-btn" data-value="into a bank">into a bank</button>
-      <button type="button" class="choice-btn" data-value="out of a bank">out of a bank</button>
+    <div class="instructions" style="margin-top:22px;">4. Write past continuous questions. Then match them with the answers (a–d).</div>
+    <div class="story-block">
+      <strong>a</strong> We were going to the cinema.<br>
+      <strong>b</strong> Yes, she was.<br>
+      <strong>c</strong> They were taking photos.<br>
+      <strong>d</strong> Yes, I was.
     </div>
 
-    <div class="choice-question">3. The man had a … .</div>
-    <div class="choice-group" id="radio-6-3" data-correct="bag">
-      <button type="button" class="choice-btn" data-value="knife in a bag">knife in a bag</button>
-      <button type="button" class="choice-btn" data-value="knife">knife</button>
-      <button type="button" class="choice-btn" data-value="bag">bag</button>
+    <div class="choice-question">1. you / wear / jeans / yesterday?</div>
+    <div class="short-answer-line"><span class="label">Question:</span><input type="text" id="rv4-1" data-save data-answer="Were you wearing jeans yesterday"></div>
+    <div class="choice-group" id="rv4-1m" data-correct="d">
+      <button type="button" class="choice-btn" data-value="a">a</button>
+      <button type="button" class="choice-btn" data-value="b">b</button>
+      <button type="button" class="choice-btn" data-value="c">c</button>
+      <button type="button" class="choice-btn" data-value="d">d</button>
     </div>
 
-    <div class="choice-question">4. The alarm bells were ringing … .</div>
-    <div class="choice-group" id="radio-6-4" data-correct="inside the bank">
-      <button type="button" class="choice-btn" data-value="in the bus">in the bus</button>
-      <button type="button" class="choice-btn" data-value="inside the bank">inside the bank</button>
-      <button type="button" class="choice-btn" data-value="outside the bank">outside the bank</button>
+    <div class="choice-question">2. Lidia / work / at 10 pm last night?</div>
+    <div class="short-answer-line"><span class="label">Question:</span><input type="text" id="rv4-2" data-save data-answer="Was Lidia working at 10 pm last night|Was Lidia working at 10pm last night|Was Lidia working at 10 p m last night"></div>
+    <div class="choice-group" id="rv4-2m" data-correct="b">
+      <button type="button" class="choice-btn" data-value="a">a</button>
+      <button type="button" class="choice-btn" data-value="b">b</button>
+      <button type="button" class="choice-btn" data-value="c">c</button>
+      <button type="button" class="choice-btn" data-value="d">d</button>
     </div>
 
-    <div class="choice-question">5. The people at the bus stop were … .</div>
-    <div class="choice-group" id="radio-6-5" data-correct="not doing anything">
-      <button type="button" class="choice-btn" data-value="helping the man">helping the man</button>
-      <button type="button" class="choice-btn" data-value="not doing anything">not doing anything</button>
-      <button type="button" class="choice-btn" data-value="helping the policeman">helping the policeman</button>
+    <div class="choice-question">3. where / we / go / last Saturday at 7 pm?</div>
+    <div class="short-answer-line"><span class="label">Question:</span><input type="text" id="rv4-3" data-save data-answer="Where were we going last Saturday at 7 pm|Where were we going last Saturday at 7pm|Where were we going last Saturday at 7 p m"></div>
+    <div class="choice-group" id="rv4-3m" data-correct="a">
+      <button type="button" class="choice-btn" data-value="a">a</button>
+      <button type="button" class="choice-btn" data-value="b">b</button>
+      <button type="button" class="choice-btn" data-value="c">c</button>
+      <button type="button" class="choice-btn" data-value="d">d</button>
     </div>
 
-    <div class="choice-question">6. The policeman caught the man because … stopped him.</div>
-    <div class="choice-group" id="radio-6-6" data-correct="some dogs">
-      <button type="button" class="choice-btn" data-value="a woman">a woman</button>
-      <button type="button" class="choice-btn" data-value="Bruno">Bruno</button>
-      <button type="button" class="choice-btn" data-value="some dogs">some dogs</button>
+    <div class="choice-question">4. what / Ollie and Brad / do / an hour ago?</div>
+    <div class="short-answer-line"><span class="label">Question:</span><input type="text" id="rv4-4" data-save data-answer="What were Ollie and Brad doing an hour ago"></div>
+    <div class="choice-group" id="rv4-4m" data-correct="c">
+      <button type="button" class="choice-btn" data-value="a">a</button>
+      <button type="button" class="choice-btn" data-value="b">b</button>
+      <button type="button" class="choice-btn" data-value="c">c</button>
+      <button type="button" class="choice-btn" data-value="d">d</button>
     </div>
 
-    <div class="instructions" style="margin-top:22px;">4. Answer the questions.</div>
-    <div class="choice-question">1. How do you think the people at the bus stop felt?</div>
-    <textarea class="free-write" id="phonein-q1" data-save style="min-height:70px;"></textarea>
-    <div class="choice-question">2. Did they do the right thing? Why / Why not?</div>
-    <textarea class="free-write" id="phonein-q2" data-save style="min-height:70px;"></textarea>
+    <div class="instructions" style="margin-top:22px;">5. Complete the text with the past simple or past continuous form of the verbs.</div>
+    <div class="story-block">
+      <img class="round-pic" src="../images/lesson-04-review-beth.jpg" alt="Beth, a young woman with long dark hair, smiling">
+      Beth <sup>1</sup><input type="text" id="rv5-1" data-save size="11" data-answer="was studying"> (study) at school when
+      she <sup>2</sup><input type="text" id="rv5-2" data-save size="11" data-answer="wrote"> (write) her first novel.
+      She <sup>3</sup><input type="text" id="rv5-3" data-save size="11" data-answer="posted"> (post) her book online
+      while she <sup>4</sup><input type="text" id="rv5-4" data-save size="11" data-answer="was sitting"> (sit) in her bedroom
+      at home. She soon <sup>5</sup><input type="text" id="rv5-5" data-save size="11" data-answer="discovered"> (discover) that
+      lots of young people <sup>6</sup><input type="text" id="rv5-6" data-save size="11" data-answer="were reading"> (read) her story. Two
+      years later, it had 19 million reads on the website and it <sup>7</sup><input type="text" id="rv5-7" data-save size="11" data-answer="won"> (win) a prize for teen fiction.
+      When Beth <sup>8</sup><input type="text" id="rv5-8" data-save size="11" data-answer="left"> (leave) school, she
+      <sup>9</sup><input type="text" id="rv5-9" data-save size="11" data-answer="went"> (go) to university. She <sup>10</sup><input type="text" id="rv5-10" data-save size="11" data-answer="completed">
+      (complete) two more books while she <sup>11</sup><input type="text" id="rv5-11" data-save size="11" data-answer="was doing">
+      (do) a physics course, and a TV company <sup>12</sup><input type="text" id="rv5-12" data-save size="11" data-answer="made">
+      (make) her first novel into a film in 2018.
+    </div>
+
+    <!-- ---------- self-assessment ---------- -->
+    <h3 class="part-subhead">Self-assessment</h3>
+    <div class="instructions" style="margin-top:14px;">How well can you do these things? Choose a face.</div>
+    <div class="phrase-box" data-label="I can …">
+      <div class="self-check">
+        <span>I can use adjectives to talk about feelings.</span>
+        <div class="choice-group" id="self-1">
+          <button type="button" class="choice-btn" data-value="1">🌱 Not yet</button>
+          <button type="button" class="choice-btn" data-value="2">👍 OK</button>
+          <button type="button" class="choice-btn" data-value="3">🌟 Great!</button>
+        </div>
+      </div>
+      <div class="self-check">
+        <span>I can use prepositions to talk about movement.</span>
+        <div class="choice-group" id="self-2">
+          <button type="button" class="choice-btn" data-value="1">🌱 Not yet</button>
+          <button type="button" class="choice-btn" data-value="2">👍 OK</button>
+          <button type="button" class="choice-btn" data-value="3">🌟 Great!</button>
+        </div>
+      </div>
+      <div class="self-check">
+        <span>I can use the past continuous to make affirmative and negative sentences and questions.</span>
+        <div class="choice-group" id="self-3">
+          <button type="button" class="choice-btn" data-value="1">🌱 Not yet</button>
+          <button type="button" class="choice-btn" data-value="2">👍 OK</button>
+          <button type="button" class="choice-btn" data-value="3">🌟 Great!</button>
+        </div>
+      </div>
+      <div class="self-check">
+        <span>I can use the past simple and the past continuous.</span>
+        <div class="choice-group" id="self-4">
+          <button type="button" class="choice-btn" data-value="1">🌱 Not yet</button>
+          <button type="button" class="choice-btn" data-value="2">👍 OK</button>
+          <button type="button" class="choice-btn" data-value="3">🌟 Great!</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <p class="photo-credit">Illustration: <em>Own it! 2</em> Workbook (Cambridge University Press), page 27.</p>
+  <p class="photo-credit">Photos: <em>Own it! 2</em> Student's Book (Cambridge University Press), page 44.</p>
 
   <div class="lesson-footer-nav">
+    <a class="btn secondary" href="lesson-04-part-2.html">Part 2: A radio phone-in &rarr;</a>
     <a class="btn secondary" href="../index.html">Back to all lessons</a>
   </div>
 
@@ -111,6 +258,36 @@
   const LESSON_ID = "lesson-04";
   KL.initHomePage();
   KL.initLessonPage(LESSON_ID);
+
+  // Warm-up dice: flick through the cards, land on one that hasn't
+  // been asked yet. When all six are done, start again.
+  (() => {
+    const cards = Array.from(document.querySelectorAll("#dice-grid .dice-card"));
+    const rollBtn = document.getElementById("dice-roll");
+    const result = document.getElementById("dice-result");
+
+    rollBtn.addEventListener("click", () => {
+      cards.forEach((c) => { if (c.classList.contains("picked")) c.classList.add("asked"); c.classList.remove("picked"); });
+      let left = cards.filter((c) => !c.classList.contains("asked"));
+      if (!left.length) { cards.forEach((c) => c.classList.remove("asked")); left = cards; }
+
+      const target = left[Math.floor(Math.random() * left.length)];
+      rollBtn.disabled = true;
+      result.textContent = "Rolling…";
+      let ticks = 0;
+      const spin = setInterval(() => {
+        cards.forEach((c) => c.classList.remove("rolling"));
+        if (++ticks < 12) {
+          cards[Math.floor(Math.random() * cards.length)].classList.add("rolling");
+          return;
+        }
+        clearInterval(spin);
+        target.classList.add("picked");
+        result.textContent = "You rolled a " + target.dataset.num + "!";
+        rollBtn.disabled = false;
+      }, 90);
+    });
+  })();
 </script>
 </body>
 </html>

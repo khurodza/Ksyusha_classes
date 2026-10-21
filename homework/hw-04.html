@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homework 04 — Unit 3 Review</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../sync.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="site-title" href="../index.html" style="text-decoration:none;">Ksyusha's English Lessons</a>
+  <nav class="topnav">
+    <a class="btn small secondary" href="../index.html">&larr; Home</a>
+    <a href="../homework.html" class="active">Homework</a>
+  </nav>
+  <div class="greeting" id="greeting"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Homework 04 — Unit 3 Review</h1>
+    <p>Homework for Lesson 04, from the workbook (Own it! 2, Unit 3 Review, pages 30–31): feelings, prepositions of movement, and the past simple and past continuous.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Vocabulary: Adjectives of feeling</span>
+      <span class="hero-tag">Vocabulary: Prepositions of movement</span>
+      <span class="hero-tag">Grammar: Past simple &amp; continuous</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       WORKBOOK p.30 — VOCABULARY (Ex 1–3)
+       ============================================================ -->
+  <div class="section part part-1" id="wb-30">
+    <div class="part-head">
+      <span class="part-tag">Page 30</span>
+      <h2>Vocabulary</h2>
+      <p class="part-sub">Adjectives of feeling · Prepositions of movement</p>
+    </div>
+
+    <div class="instructions">1. Complete the sentences with adjectives of feeling. Use the first letter to help you.</div>
+    <p class="blank-line">1. I'm <span class="first-letter">w</span><input type="text" id="hw4-1-1" data-save data-answer="orried|worried"> about my sister because she isn't feeling very happy.</p>
+    <p class="blank-line">2. He felt <span class="first-letter">e</span><input type="text" id="hw4-1-2" data-save data-answer="mbarrassed|embarrassed"> when he didn't understand the message.</p>
+    <p class="blank-line">3. Linda is busy all the time! She's never <span class="first-letter">b</span><input type="text" id="hw4-1-3" data-save data-answer="ored|bored">.</p>
+    <p class="blank-line">4. Don't be <span class="first-letter">n</span><input type="text" id="hw4-1-4" data-save data-answer="ervous|nervous"> about your exams. You'll be fine.</p>
+    <p class="blank-line">5. Are you <span class="first-letter">a</span><input type="text" id="hw4-1-5" data-save data-answer="fraid|afraid"> of cows? They're big and they can get angry!</p>
+    <p class="blank-line">6. We were <span class="first-letter">s</span><input type="text" id="hw4-1-6" data-save data-answer="urprised|surprised"> when some old friends from Mexico suddenly came to our door!</p>
+    <p class="blank-line">7. Sara felt <span class="first-letter">l</span><input type="text" id="hw4-1-7" data-save data-answer="onely|lonely"> at first when she moved to the new town. She didn't have any friends.</p>
+    <p class="blank-line">8. Do your parents get <span class="first-letter">a</span><input type="text" id="hw4-1-8" data-save data-answer="ngry|angry"> at you when you come home late?</p>
+    <p class="blank-line">9. Don't get so <span class="first-letter">e</span><input type="text" id="hw4-1-9" data-save data-answer="xcited|excited">! It's only a little birthday present!</p>
+    <p class="blank-line">10. They were all <span class="first-letter">t</span><input type="text" id="hw4-1-10" data-save data-answer="ired|tired"> after running and doing exercise all day.</p>
+    <p class="blank-line">11. Don't be <span class="first-letter">u</span><input type="text" id="hw4-1-11" data-save data-answer="pset|upset"> when you don't get 100% in a test. No one gets that!</p>
+
+    <div class="instructions" style="margin-top:22px;">2. Match 1–6 with a–f. Click the beginning of a sentence, then its ending.</div>
+    <div class="match-grid" data-match-id="hw04-endings">
+      <div class="match-col">
+        <div class="match-item" data-match="1" data-col="a">1. They ran quickly down</div>
+        <div class="match-item" data-match="2" data-col="a">2. She was sitting between</div>
+        <div class="match-item" data-match="3" data-col="a">3. When you walk past</div>
+        <div class="match-item" data-match="4" data-col="a">4. We jumped off the boat</div>
+        <div class="match-item" data-match="5" data-col="a">5. Tell the driver your address</div>
+        <div class="match-item" data-match="6" data-col="a">6. Look right, left, then right again</div>
+      </div>
+      <div class="match-col">
+        <div class="match-item" data-match="5" data-col="b">a. when you get into the taxi.</div>
+        <div class="match-item" data-match="4" data-col="b">b. into the river.</div>
+        <div class="match-item" data-match="2" data-col="b">c. her two best friends.</div>
+        <div class="match-item" data-match="6" data-col="b">d. before you walk across that road.</div>
+        <div class="match-item" data-match="3" data-col="b">e. my house, you can always come in.</div>
+        <div class="match-item" data-match="1" data-col="b">f. the stairs and out into the street.</div>
+      </div>
+    </div>
+
+    <div class="instructions" style="margin-top:22px;">3. Look at the photos and choose the correct prepositions.</div>
+    <div class="feel-grid">
+      <figure class="feel-card">
+        <span class="pic-num">1</span>
+        <img src="../images/hw-04-prep-1.jpg" alt="A boat on a river going under a long iron bridge">
+        <div class="card-sentence">The boat went … the bridge.</div>
+        <div class="choice-group" id="hw4-3-1" data-correct="under">
+          <button type="button" class="choice-btn" data-value="across">across</button>
+          <button type="button" class="choice-btn" data-value="under">under</button>
+        </div>
+      </figure>
+      <figure class="feel-card">
+        <span class="pic-num">2</span>
+        <img src="../images/hw-04-prep-2.jpg" alt="A woman running along an empty desert road">
+        <div class="card-sentence">Kim was running … the road.</div>
+        <div class="choice-group" id="hw4-3-2" data-correct="along">
+          <button type="button" class="choice-btn" data-value="along">along</button>
+          <button type="button" class="choice-btn" data-value="across">across</button>
+        </div>
+      </figure>
+      <figure class="feel-card">
+        <span class="pic-num">3</span>
+        <img src="../images/hw-04-prep-3.jpg" alt="A young man jumping over a concrete wall">
+        <div class="card-sentence">He jumped … the wall.</div>
+        <div class="choice-group" id="hw4-3-3" data-correct="over">
+          <button type="button" class="choice-btn" data-value="through">through</button>
+          <button type="button" class="choice-btn" data-value="over">over</button>
+        </div>
+      </figure>
+      <figure class="feel-card">
+        <span class="pic-num">4</span>
+        <img src="../images/hw-04-prep-4.jpg" alt="A black cat coming in through a kitchen window">
+        <div class="card-sentence">The cat came … the kitchen window.</div>
+        <div class="choice-group" id="hw4-3-4" data-correct="through">
+          <button type="button" class="choice-btn" data-value="through">through</button>
+          <button type="button" class="choice-btn" data-value="under">under</button>
+        </div>
+      </figure>
+      <figure class="feel-card">
+        <span class="pic-num">5</span>
+        <img src="../images/hw-04-prep-5.jpg" alt="A woman getting into a white limousine on a red carpet, photographers around">
+        <div class="card-sentence">The movie star got … the car.</div>
+        <div class="choice-group" id="hw4-3-5" data-correct="into">
+          <button type="button" class="choice-btn" data-value="out of">out of</button>
+          <button type="button" class="choice-btn" data-value="into">into</button>
+        </div>
+      </figure>
+      <figure class="feel-card">
+        <span class="pic-num">6</span>
+        <img src="../images/hw-04-prep-6.jpg" alt="A little girl sitting high up in an apple tree">
+        <div class="card-sentence">Lena climbed … a tree.</div>
+        <div class="choice-group" id="hw4-3-6" data-correct="up">
+          <button type="button" class="choice-btn" data-value="over">over</button>
+          <button type="button" class="choice-btn" data-value="up">up</button>
+        </div>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       WORKBOOK p.31 — LANGUAGE IN ACTION (Ex 6) + CUMULATIVE (Ex 7)
+       ============================================================ -->
+  <div class="section part part-2" id="wb-31">
+    <div class="part-head">
+      <span class="part-tag">Page 31</span>
+      <h2>Language in action</h2>
+      <p class="part-sub">Past simple and past continuous · Cumulative language</p>
+    </div>
+
+    <div class="instructions">6. Complete the sentences with the past simple or past continuous form of the verbs in brackets.</div>
+    <div class="story-block">
+      <div>1. While we <input type="text" id="hw4-6-1a" data-save size="11" data-answer="were waiting"> (wait) for our friends, we <input type="text" id="hw4-6-1b" data-save size="11" data-answer="started"> (start) to make tea.</div>
+      <div>2. He <input type="text" id="hw4-6-2a" data-save size="11" data-answer="heard"> (hear) the good news while he <input type="text" id="hw4-6-2b" data-save size="11" data-answer="was sitting"> (sit) on the train.</div>
+      <div>3. Someone <input type="text" id="hw4-6-3a" data-save size="11" data-answer="called"> (call) you while you <input type="text" id="hw4-6-3b" data-save size="11" data-answer="were having"> (have) a shower.</div>
+      <div>4. When their parents <input type="text" id="hw4-6-4a" data-save size="11" data-answer="returned"> (return), a band <input type="text" id="hw4-6-4b" data-save size="11" data-answer="was playing"> (play) in their garage.</div>
+      <div>5. When the film <input type="text" id="hw4-6-5a" data-save size="11" data-answer="finished"> (finish), everyone in the cinema <input type="text" id="hw4-6-5b" data-save size="11" data-answer="cried"> (cry).</div>
+      <div>6. While I <input type="text" id="hw4-6-6a" data-save size="11" data-answer="was looking"> (look) for my shoes, I <input type="text" id="hw4-6-6b" data-save size="11" data-answer="found"> (find) an old sandwich under my bed.</div>
+    </div>
+
+    <h3 class="part-subhead">Cumulative language</h3>
+    <div class="instructions" style="margin-top:14px;">7. Complete the conversation. Choose the correct option for each gap.</div>
+    <img class="wide-pic" src="../images/hw-04-bella.jpg" alt="A girl taking a tablet from her little brother" style="margin:12px auto;">
+    <div class="story-block convo">
+      <p><span class="who jake">JAKE</span><span>Hi, Bella! Are you OK? When I <sup>1</sup><span class="choice-group inline" id="hw4-7-1" data-correct="saw"><button type="button" class="choice-btn" data-value="seeing">seeing</button><button type="button" class="choice-btn" data-value="was seeing">was seeing</button><button type="button" class="choice-btn" data-value="saw">saw</button></span> you yesterday, you were looking upset.</span></p>
+      <p><span class="who bella">BELLA</span><span>There were <sup>2</sup><span class="choice-group inline" id="hw4-7-2" data-correct="some"><button type="button" class="choice-btn" data-value="any">any</button><button type="button" class="choice-btn" data-value="some">some</button><button type="button" class="choice-btn" data-value="a">a</button></span> problems at home.</span></p>
+      <p><span class="who jake">JAKE</span><span>That's <sup>3</sup><span class="choice-group inline" id="hw4-7-3" data-correct="bad"><button type="button" class="choice-btn" data-value="bad">bad</button><button type="button" class="choice-btn" data-value="well">well</button><button type="button" class="choice-btn" data-value="badly">badly</button></span>. What were you doing? Did you have a lot of homework?</span></p>
+      <p><span class="who bella">BELLA</span><span>No, I <sup>4</sup><span class="choice-group inline" id="hw4-7-4" data-correct="didn't"><button type="button" class="choice-btn" data-value="did">did</button><button type="button" class="choice-btn" data-value="do">do</button><button type="button" class="choice-btn" data-value="didn't">didn't</button></span>. But I was angry with my little brother.</span></p>
+      <p><span class="who jake">JAKE</span><span>Really? What <sup>5</sup><span class="choice-group inline" id="hw4-7-5" data-correct="did he do"><button type="button" class="choice-btn" data-value="did he do">did he do</button><button type="button" class="choice-btn" data-value="did he">did he</button><button type="button" class="choice-btn" data-value="he did">he did</button></span>?</span></p>
+      <p><span class="who bella">BELLA</span><span>Oh, he <sup>6</sup><span class="choice-group inline" id="hw4-7-6" data-correct="was playing"><button type="button" class="choice-btn" data-value="plays">plays</button><button type="button" class="choice-btn" data-value="playing">playing</button><button type="button" class="choice-btn" data-value="was playing">was playing</button></span> horrible noisy video games all evening.</span></p>
+      <p><span class="who jake">JAKE</span><span>My sister <sup>7</sup><span class="choice-group inline" id="hw4-7-7" data-correct="loves"><button type="button" class="choice-btn" data-value="loves">loves</button><button type="button" class="choice-btn" data-value="is loving">is loving</button><button type="button" class="choice-btn" data-value="doesn't love">doesn't love</button></span> playing those, too. What was the problem?</span></p>
+      <p><span class="who bella">BELLA</span><span>Well, he was making a terrible noise while I <sup>8</sup><span class="choice-group inline" id="hw4-7-8" data-correct="was watching"><button type="button" class="choice-btn" data-value="watch">watch</button><button type="button" class="choice-btn" data-value="was watching">was watching</button><button type="button" class="choice-btn" data-value="watched">watched</button></span> my favourite show.</span></p>
+      <p><span class="who jake">JAKE</span><span>Come on, Bella. Sometimes it can be difficult to play video games <sup>9</sup><span class="choice-group inline" id="hw4-7-9" data-correct="quiet"><button type="button" class="choice-btn" data-value="quietly">quietly</button><button type="button" class="choice-btn" data-value="quieter">quieter</button><button type="button" class="choice-btn" data-value="quiet">quiet</button></span>.</span></p>
+      <p><span class="who bella">BELLA</span><span>I never <sup>10</sup><span class="choice-group inline" id="hw4-7-10" data-correct="play"><button type="button" class="choice-btn" data-value="am playing">am playing</button><button type="button" class="choice-btn" data-value="to play">to play</button><button type="button" class="choice-btn" data-value="play">play</button></span> video games!</span></p>
+      <p><span class="who jake">JAKE</span><span>OK, so what <sup>11</sup><span class="choice-group inline" id="hw4-7-11" data-correct="happened"><button type="button" class="choice-btn" data-value="happened">happened</button><button type="button" class="choice-btn" data-value="was happening">was happening</button><button type="button" class="choice-btn" data-value="happens">happens</button></span> in the end?</span></p>
+      <p><span class="who bella">BELLA</span><span>Well, in the end I <sup>12</sup><span class="choice-group inline" id="hw4-7-12" data-correct="took"><button type="button" class="choice-btn" data-value="was taking">was taking</button><button type="button" class="choice-btn" data-value="take">take</button><button type="button" class="choice-btn" data-value="took">took</button></span> Billy's tablet and hid it in a very secret place … in the kitchen.</span></p>
+      <p><span class="who jake">JAKE</span><span>You're kidding!</span></p>
+    </div>
+  </div>
+
+  <p class="photo-credit">Photos: <em>Own it! 2</em> Workbook (Cambridge University Press), pages 30 and 31. Exercise 3 photos: stock images.</p>
+
+  <div class="lesson-footer-nav">
+    <a class="btn secondary" href="../homework.html">&larr; Back to all homework</a>
+  </div>
+
+</div>
+
+<script src="../script.js"></script>
+<script>
+  const LESSON_ID = "hw-04";
+  KL.initHomePage();
+  KL.initLessonPage(LESSON_ID);
+</script>
+</body>
+</html>
