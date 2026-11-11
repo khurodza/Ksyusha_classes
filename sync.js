@@ -105,7 +105,7 @@
     document.querySelectorAll('input[data-answer]:not(.xw-blank), textarea[data-answer], select[data-answer]').forEach(el => live(el) &&
       count(!!el.value.trim(), matches(el.value, el.dataset.answer, el.dataset.check === 'contains')));
     document.querySelectorAll('.mc-options[data-correct]').forEach(g => { if (!live(g)) return; const c = g.querySelector('input:checked') || g.querySelector('.mc-option.selected input'); count(!!c, c && c.value === g.dataset.correct); });
-    document.querySelectorAll('.choice-group[data-correct]').forEach(g => { const c = g.querySelector('.choice-btn.selected'); count(!!c, c && c.dataset.value === g.dataset.correct); });
+    document.querySelectorAll('.choice-group[data-correct]').forEach(g => { if (!live(g)) return; const c = g.querySelector('.choice-btn.selected'); count(!!c, c && c.dataset.value === g.dataset.correct); });
     document.querySelectorAll('.word-choice[data-answer]').forEach(g => { if (!live(g)) return; const c = g.querySelector('.selected'); count(!!c, c && c.textContent.trim().toLowerCase() === g.dataset.answer.toLowerCase()); });
     return { total, answered, right };
   }

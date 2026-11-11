@@ -1654,3 +1654,118 @@ input.is-wrong, textarea.is-wrong { background: #fde4e4 !important; border-color
   font-weight: 600;
   font-style: italic;
 }
+
+/* ============================================================
+   TEACHER NOTES & EXTRAS (from Lesson 05)
+   .t-note  — notes from the Teacher's Book. NEVER shown to the
+              student: only inside teacher.html (html.watching)
+              or with ?extras=all / ?teacher=1 (html.teacher-view).
+   .section[data-extra="id"] — extra material, hidden from the
+              student until the teacher opens it (sync.js).
+   ============================================================ */
+.t-note { display: none; }
+html.watching .t-note, html.teacher-view .t-note { display: block; }
+
+.t-note {
+  margin: 16px 0;
+  border: 2px solid #7B5CE6;
+  border-radius: var(--radius-sm);
+  background: #F4F0FE;
+  color: #2E2357;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+.t-note > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 9px 14px;
+  font-weight: 700;
+  color: #4B3A8C;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.t-note > summary::-webkit-details-marker { display: none; }
+.t-note > summary::after { content: "▾"; margin-left: auto; transition: transform .15s; }
+.t-note:not([open]) > summary::after { transform: rotate(-90deg); }
+.t-note .t-src {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: .03em;
+  padding: 2px 9px; border-radius: 999px; background: #7B5CE6; color: #fff;
+}
+.t-note .t-body { padding: 0 16px 12px; border-top: 1px dashed #B9A8F0; }
+.t-note h4 { margin: 12px 0 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: .06em; color: #7B5CE6; }
+.t-note ul, .t-note ol { margin: 4px 0; padding-left: 20px; }
+.t-note li { margin: 3px 0; }
+.t-note p { margin: 6px 0; }
+.t-note .t-ans {
+  margin: 8px 0 4px; padding: 7px 12px; border-radius: 8px;
+  background: #E8F7EF; border: 1px solid #9ED8BC; color: #0D5B40;
+}
+.t-note .t-ans::before { content: "✔ Answers: "; font-weight: 800; }
+.t-note .t-tip {
+  margin: 8px 0 4px; padding: 7px 12px; border-radius: 8px;
+  background: #FFF6DB; border: 1px solid #F2D58A; color: #5A4710;
+}
+.t-note .t-tip::before { content: "💡 1-to-1 tip: "; font-weight: 800; }
+.t-note .t-script {
+  margin: 6px 0; padding: 10px 12px; border-radius: 8px; background: #fff;
+  border: 1px solid #D9CFFA; white-space: pre-line; font-size: 0.88rem;
+}
+.t-note .stars { color: #C98A00; letter-spacing: 1px; }
+
+/* overview note at the top of a lesson */
+.t-note.t-plan { border-width: 3px; }
+.t-note.t-plan .t-flow { counter-reset: flow; list-style: none; padding-left: 0; }
+.t-note.t-plan .t-flow li { counter-increment: flow; padding-left: 30px; position: relative; }
+.t-note.t-plan .t-flow li::before {
+  content: counter(flow); position: absolute; left: 0; top: 1px;
+  width: 21px; height: 21px; border-radius: 50%; background: #7B5CE6; color: #fff;
+  font-size: 0.75rem; font-weight: 800; display: grid; place-items: center;
+}
+.t-note .t-x { font-size: 0.78rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; background: #E6DEFC; color: #4B3A8C; }
+
+/* label on extra sections (the student only sees it after the teacher opens the block) */
+.extra-chip {
+  display: inline-block; margin-left: 8px; padding: 2px 10px; border-radius: 999px;
+  background: #7B5CE6; color: #fff; font-family: 'Work Sans', sans-serif;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: .04em; vertical-align: middle;
+}
+.section[data-extra] { border-style: dashed; }
+
+/* photos with letters (match sentences to photos) */
+.photo-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px; margin: 14px 0 18px;
+}
+.photo-grid img { width: 100%; display: block; border: 2px solid var(--ink); border-radius: var(--radius-sm); }
+.choice-group.letters .choice-btn { min-width: 42px; }
+.match-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 10px 0; }
+.match-line .ml-text { flex: 1 1 280px; font-weight: 500; }
+.match-line .choice-group { margin: 0; }
+
+/* word search */
+.ws-grid {
+  display: inline-grid; grid-template-columns: repeat(10, 36px); gap: 3px;
+  padding: 10px; background: #e9f3e3; border: 2px solid var(--ink); border-radius: var(--radius-sm);
+  user-select: none; max-width: 100%;
+}
+.ws-grid button {
+  width: 36px; height: 36px; border: 1.5px solid #9bb88f; border-radius: 6px; background: #fff;
+  font: 700 1rem 'Work Sans', sans-serif; color: var(--ink); cursor: pointer; padding: 0;
+}
+.ws-grid button.on { background: var(--mustard); border-color: var(--ink); }
+@media (max-width: 480px) {
+  .ws-grid { grid-template-columns: repeat(10, 28px); gap: 2px; padding: 6px; }
+  .ws-grid button { width: 28px; height: 28px; font-size: .85rem; }
+}
+
+/* newspaper article */
+.article {
+  background: #fff8d6; border: 2px solid var(--ink); border-radius: var(--radius-md);
+  padding: 20px 22px; margin: 16px 0; line-height: 1.6;
+}
+.article h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; color: #c27a00; margin: 0 0 6px; }
+.article .standfirst { font-weight: 700; background: #f08a24; color: #fff; display: inline-block; padding: 6px 12px; border-radius: 10px; margin-bottom: 12px; }
+.article .cols { columns: 2 260px; column-gap: 26px; }
+.article .cols p { margin: 0 0 12px; break-inside: avoid-column; }
+.article img { width: 100%; border-radius: var(--radius-sm); border: 2px solid var(--ink); margin: 0 0 12px; break-inside: avoid; }
+.wb-article { background: #f3f1ee; }
+.wb-article h3 { color: var(--ink); }

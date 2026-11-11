@@ -8,6 +8,11 @@
    the same browser.
    ============================================================ */
 
+/* Teacher view in the teacher's own browser: ?extras=all or ?teacher=1
+   shows the teacher notes (.t-note). Inside teacher.html they show
+   anyway (sync.js puts .watching on the page). */
+if (/[?&](extras=all|teacher=1)\b/.test(location.search)) document.documentElement.classList.add("teacher-view");
+
 const KL = (() => {
   const PREFIX = "ksyusha_";
   const NAME_KEY = PREFIX + "student_name";
