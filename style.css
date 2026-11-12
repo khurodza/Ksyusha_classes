@@ -1775,8 +1775,18 @@ html.watching .t-note, html.teacher-view .t-note { display: block; }
 .skim-timer .t-left { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; min-width: 64px; }
 .skim-timer .t-left.done { color: var(--terracotta); }
 
-/* homework pages filled from a lesson (hw-05 …) */
-#hw-tasks .hw-has { display: none; }
-#hw-tasks:has(.sent-here) .hw-has { display: block; }
-#hw-tasks:has(.sent-here) .hw-empty { display: none; }
-.sent-here .extra-chip { display: none; }
+/* Homework section inside a lesson (#moved-homework): tasks moved there by
+   the teacher (sync.js adds .has-moved to the section when it holds any) */
+.hw-section { margin: 40px 0 22px; scroll-margin-top: 16px; }
+.hw-head {
+  background: #fdf3d6; border: var(--border); border-radius: var(--radius-md);
+  padding: 20px 24px; box-shadow: var(--shadow);
+}
+.hw-head .part-tag { background: var(--mustard); color: var(--ink); }
+.hw-head h2 { margin: 6px 0 4px; font-size: 1.6rem; color: var(--terracotta-dark); }
+.hw-head p { margin: 4px 0 0; font-weight: 600; }
+.hw-head .hw-has { display: none; }
+.hw-section.has-moved .hw-has { display: block; }
+.hw-section.has-moved .hw-empty { display: none; }
+.hw-section .extra-chip { display: none; }
+html:not(.watching) .hw-section .section[data-extra] { border-style: solid; }

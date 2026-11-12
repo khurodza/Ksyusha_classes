@@ -24,9 +24,9 @@
    own browser, screen sharing).
    Moved tasks: the teacher can move any step (section.step with an id)
    into the Homework tab and back (students/<id>/moved/<page>/<step id>).
-   A lesson with <meta name="homework-page" content="hw-05"> has its own
-   homework page: there "📚 Move to homework" sends the task to that page
-   (the same as "➡ To another lesson…" → that page).
+   Plain pages put moved tasks in #moved-homework: the page's own Homework
+   section if it has one (Ksyusha's lessons from Lesson 05), or a block
+   added at the end.
    A Homework tab is made if the lesson has none; a moved extra is shown.
    Sent to another lesson: students/<id>/sent/<page>/<task> = { to, path, at }.
    The task leaves its page and is copied into the <to> page (ids get the
@@ -268,7 +268,6 @@
       }
     }
     document.querySelectorAll('.move-btn').forEach(b => {
-      if (b.dataset.label) { b.textContent = b.dataset.label; return; }   // sends to the homework page: always the same label
       const on = !!b.closest('[data-task]').dataset.moved;
       b.textContent = on ? '↩ Back to the lesson' : '📚 Move to homework';
       b.classList.toggle('on', on);
@@ -610,8 +609,6 @@
       taskKeys();
       const hwHome = homeworkBox(false);
       const lessons = (() => { try { return teacher().lessons() || []; } catch (e) { return []; } })();
-      const hwMeta = document.querySelector('meta[name="homework-page"]');
-      const hwPage = SEND_MODE && hwMeta && lessons.find(l => l.page === hwMeta.content);   // this lesson's own homework page
       document.querySelectorAll('[data-task]').forEach(el => {
         el.classList.add('w-movable');
         const bar = document.createElement('div');
@@ -619,14 +616,7 @@
         if (!(hwHome && hwHome.root.contains(el)) && !el.classList.contains('sent-away')) {
           const b = document.createElement('button');
           b.type = 'button'; b.className = 'move-btn watch-tools'; b.textContent = '📚 Move to homework';
-          if (hwPage) {                                   // send it to the homework page (and out of the old bottom block, if it was moved there)
-            b.dataset.label = '📚 Move to ' + lessonName(hwPage.title, hwPage.page);
-            b.addEventListener('click', () => {
-              const t = teacher(); if (!t || !t.sendTask) { b.textContent = '⟳ Reload the teacher page first'; return; }
-              if (el.dataset.moved && t.moveTask) t.moveTask(el.dataset.task, false);
-              t.sendTask(el.dataset.task, hwPage.page);
-            });
-          } else b.addEventListener('click', () => { const t = teacher(); if (t && t.moveTask) t.moveTask(el.dataset.task, !el.dataset.moved); else b.textContent = '⟳ Reload the teacher page first'; });
+          b.addEventListener('click', () => { const t = teacher(); if (t && t.moveTask) t.moveTask(el.dataset.task, !el.dataset.moved); else b.textContent = '⟳ Reload the teacher page first'; });
           bar.appendChild(b);
         }
         if (SEND_MODE && lessons.length && !el.classList.contains('sent-away')) {   // ➡ to another lesson
