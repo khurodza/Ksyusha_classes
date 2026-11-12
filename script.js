@@ -152,6 +152,61 @@ const KL = (() => {
     });
 
     initChecking();
+    initWordSearches(lessonId, data);
+    initTimers();
+  }
+
+  // ----------------------------------------------------------
+  // Word search: <div class="ws-grid" id="..." data-rows="ROW1 ROW2 …"
+  // data-start="20,21"> — click letters to colour them. Saved under
+  // "<id>-cells". Built here (not in the page) so a copy of the task
+  // on another page (e.g. sent to homework) works too.
+  // ----------------------------------------------------------
+  function initWordSearches(lessonId, data) {
+    document.querySelectorAll(".ws-grid[data-rows]").forEach((grid) => {
+      if (!grid.id || grid.children.length) return;
+      const rows = grid.dataset.rows.trim().split(/\s+/);
+      const key = grid.id + "-cells";
+      const on = new Set(String(data[key] !== undefined ? data[key] : grid.dataset.start || "").split(",").filter(Boolean));
+      grid.style.gridTemplateColumns = "repeat(" + rows[0].length + ", var(--ws-cell, 36px))";
+      rows.forEach((row, r) => [...row].forEach((ch, c) => {
+        const i = String(r * row.length + c);
+        const b = document.createElement("button");
+        b.type = "button"; b.textContent = ch;
+        if (on.has(i)) b.classList.add("on");
+        b.addEventListener("click", () => {
+          b.classList.toggle("on");
+          b.classList.contains("on") ? on.add(i) : on.delete(i);
+          saveProgress(lessonId, { [key]: [...on].join(",") });
+        });
+        grid.appendChild(b);
+      }));
+    });
+  }
+
+  // ----------------------------------------------------------
+  // Countdown: <div class="skim-timer" data-seconds="60"> with a
+  // <button> and a <span class="t-left">. Nothing is saved.
+  // ----------------------------------------------------------
+  function initTimers() {
+    document.querySelectorAll(".skim-timer").forEach((box) => {
+      const btn = box.querySelector("button"), left = box.querySelector(".t-left");
+      if (!btn || !left) return;
+      const total = Number(box.dataset.seconds) || 60;
+      const show = (s) => (left.textContent = Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"));
+      let timer = null;
+      show(total);
+      btn.addEventListener("click", () => {
+        clearInterval(timer);
+        let s = total;
+        left.classList.remove("done");
+        show(s);
+        timer = setInterval(() => {
+          show(--s);
+          if (s <= 0) { clearInterval(timer); left.textContent = "Stop! ✋"; left.classList.add("done"); }
+        }, 1000);
+      });
+    });
   }
 
   // ----------------------------------------------------------

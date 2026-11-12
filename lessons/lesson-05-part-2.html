@@ -3,14 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="homework-page" content="hw-05">
 <title>Lesson 05 · Part 2 — A different life</title>
 <link rel="stylesheet" href="../style.css">
 <script src="../sync.js"></script>
-<style>
-  .skim-timer { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:6px 0 14px; }
-  .skim-timer .t-left { font-family:'Fraunces', serif; font-size:1.5rem; font-weight:700; min-width:64px; }
-  .skim-timer .t-left.done { color: var(--terracotta); }
-</style>
 </head>
 <body>
 
@@ -118,9 +114,9 @@
     <div class="short-answer-line"><span class="label">I think he …</span><input type="text" id="l5-r1" data-save></div>
 
     <div class="instructions" style="margin-top:22px;">2. Skim the article: read it very quickly, in one minute! Then choose the correct summary.</div>
-    <div class="skim-timer">
-      <button type="button" class="btn small" id="skim-start">⏱️ Start 1 minute</button>
-      <span class="t-left" id="skim-left" aria-live="polite">1:00</span>
+    <div class="skim-timer" data-seconds="60">
+      <button type="button" class="btn small">⏱️ Start 1 minute</button>
+      <span class="t-left" aria-live="polite">1:00</span>
     </div>
     <div class="choice-group" id="l5-r2" data-correct="b" style="flex-direction:column; align-items:stretch;">
       <button type="button" class="choice-btn" data-value="a" style="text-align:left;"><strong>a</strong> A man sold his home and bought a caravan to travel around the world for three years.</button>
@@ -285,7 +281,9 @@
     </details>
 
     <div class="instructions">1. Find ten money verbs. Click the letters to colour them. <em>BORROW</em> is an example.</div>
-    <div class="ws-grid" id="l5-ws" aria-label="Word search"></div>
+    <div class="ws-grid" id="l5-ws" aria-label="Word search"
+         data-rows="AOSELLCNJD WCOFREASVO BORROWYPYC SSYGWRPEUH CTEHEARNIA PLPNHNTDSN DSAVEWMRNG NVYDPLENDE"
+         data-start="20,21,22,23,24,25"></div>
     <div class="short-answer-line" style="margin-top:14px;"><span class="label">The ten verbs:</span><input type="text" id="l5-ws-words" data-save placeholder="borrow, ..."></div>
   </div>
 
@@ -405,44 +403,6 @@ Language in action — could: We use the past tense of can, could, to talk about
   KL.initHomePage();
   KL.initLessonPage(LESSON_ID);
 
-  // Skimming timer (Ex 2): one minute, counts down.
-  (() => {
-    const btn = document.getElementById("skim-start"), left = document.getElementById("skim-left");
-    let timer = null;
-    btn.addEventListener("click", () => {
-      clearInterval(timer);
-      let s = 60;
-      left.classList.remove("done");
-      left.textContent = "1:00";
-      timer = setInterval(() => {
-        s--;
-        left.textContent = Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
-        if (s <= 0) { clearInterval(timer); left.textContent = "Stop! ✋"; left.classList.add("done"); }
-      }, 1000);
-    });
-  })();
-
-  // Word search (SB p121 Ex 1): click letters to colour them; saved with the lesson.
-  (() => {
-    const ROWS = ["AOSELLCNJD", "WCOFREASVO", "BORROWYPYC", "SSYGWRPEUH",
-                  "CTEHEARNIA", "PLPNHNTDSN", "DSAVEWMRNG", "NVYDPLENDE"];
-    const KEY = "l5-ws-cells";
-    const grid = document.getElementById("l5-ws");
-    const saved = (KL.loadProgress(LESSON_ID)[KEY] || "20,21,22,23,24,25").split(",").filter(Boolean);
-    const on = new Set(saved);
-    ROWS.forEach((row, r) => [...row].forEach((ch, c) => {
-      const i = String(r * 10 + c);
-      const b = document.createElement("button");
-      b.type = "button"; b.textContent = ch;
-      if (on.has(i)) b.classList.add("on");
-      b.addEventListener("click", () => {
-        b.classList.toggle("on");
-        b.classList.contains("on") ? on.add(i) : on.delete(i);
-        KL.saveProgress(LESSON_ID, { [KEY]: [...on].join(",") });
-      });
-      grid.appendChild(b);
-    }));
-  })();
 </script>
 </body>
 </html>

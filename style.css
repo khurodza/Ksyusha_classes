@@ -1743,7 +1743,7 @@ html.watching .t-note, html.teacher-view .t-note { display: block; }
 
 /* word search */
 .ws-grid {
-  display: inline-grid; grid-template-columns: repeat(10, 36px); gap: 3px;
+  display: inline-grid; grid-template-columns: repeat(10, var(--ws-cell, 36px)); gap: 3px;
   padding: 10px; background: #e9f3e3; border: 2px solid var(--ink); border-radius: var(--radius-sm);
   user-select: none; max-width: 100%;
 }
@@ -1753,7 +1753,7 @@ html.watching .t-note, html.teacher-view .t-note { display: block; }
 }
 .ws-grid button.on { background: var(--mustard); border-color: var(--ink); }
 @media (max-width: 480px) {
-  .ws-grid { grid-template-columns: repeat(10, 28px); gap: 2px; padding: 6px; }
+  .ws-grid { --ws-cell: 28px; gap: 2px; padding: 6px; }
   .ws-grid button { width: 28px; height: 28px; font-size: .85rem; }
 }
 
@@ -1769,3 +1769,14 @@ html.watching .t-note, html.teacher-view .t-note { display: block; }
 .article img { width: 100%; border-radius: var(--radius-sm); border: 2px solid var(--ink); margin: 0 0 12px; break-inside: avoid; }
 .wb-article { background: #f3f1ee; }
 .wb-article h3 { color: var(--ink); }
+
+/* countdown timer (e.g. skimming) */
+.skim-timer { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 6px 0 14px; }
+.skim-timer .t-left { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; min-width: 64px; }
+.skim-timer .t-left.done { color: var(--terracotta); }
+
+/* homework pages filled from a lesson (hw-05 …) */
+#hw-tasks .hw-has { display: none; }
+#hw-tasks:has(.sent-here) .hw-has { display: block; }
+#hw-tasks:has(.sent-here) .hw-empty { display: none; }
+.sent-here .extra-chip { display: none; }
