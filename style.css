@@ -1790,3 +1790,96 @@ html.watching .t-note, html.teacher-view .t-note { display: block; }
 .hw-section.has-moved .hw-empty { display: none; }
 .hw-section .extra-chip { display: none; }
 html:not(.watching) .hw-section .section[data-extra] { border-style: solid; }
+
+/* first-letter hint + its box never split across two lines */
+.fl-gap { white-space: nowrap; }
+
+/* ============================================================
+   PHONE LAYOUT (≤ 640px)
+   The student studies on her phone, so every page must read
+   and tap comfortably at ~360–430px wide. Keep new components
+   phone-friendly too, and add their phone rules here.
+   ============================================================ */
+@media (max-width: 640px) {
+  /* --- more room for content: slimmer gutters and padding --- */
+  .wrap { padding: 0 12px 40px; }
+  .topbar { padding: 12px 14px; gap: 8px; }
+  .topbar .site-title { font-size: 1.25rem; }
+
+  .hero { padding: 20px 18px; margin: 16px 0; border-radius: var(--radius-md); }
+  .hero h1 { font-size: 1.6rem; line-height: 1.2; }
+  .hero-tag { border-radius: 14px; }
+
+  .section { padding: 18px 16px; margin: 16px 0; }
+  .section h2 { font-size: 1.25rem; }
+  .section .instructions { font-size: 1rem; }
+  .part { padding-top: 0; margin: 22px 0; overflow: hidden; overflow: clip; }
+  .part-head { margin: 0 -16px 18px; padding: 14px 16px 12px; }
+  .part-head h2 { font-size: 1.4rem; }
+  .part-subhead { font-size: 1.18rem; margin-top: 26px; padding-top: 18px; }
+  .hw-head { padding: 16px; }
+  .hw-head h2 { font-size: 1.4rem; }
+  .lesson-card { padding: 16px; }
+
+  .step-card { padding: 16px 14px 14px 16px; border-left-width: 8px; }
+  .dialogue-grid, .talk-grid { grid-template-columns: 1fr; }
+  .dialogue-card { padding: 22px 14px 14px; }
+  .talk-q { font-size: 1.12rem; }
+  .article { padding: 16px 14px; }
+  .article h3 { font-size: 1.4rem; }
+  .chat-bubble { padding: 10px 12px; }
+  .story-block { padding: 12px 14px; }
+  .phrase-box { padding: 24px 14px 12px; }
+  .speaker-pair { gap: 20px; }
+  .speaker-card img { width: 96px; height: 96px; }
+  .feel-grid { gap: 14px; }
+  .convo p { gap: 8px; }
+  .convo .who { flex-basis: 44px; }
+
+  /* --- audio player: label and time stay readable --- */
+  .audio-player { border-radius: var(--radius-md); padding: 10px 12px 10px 10px; }
+  .ap-top { flex-wrap: wrap; gap: 0 8px; }
+  .ap-label { font-size: 0.92rem; line-height: 1.25; }
+  .ap-time { white-space: nowrap; }
+  .ap-speed { min-width: 44px; min-height: 36px; padding: 6px 8px; }
+
+  /* --- answer boxes: full width under their label --- */
+  .short-answer-line { align-items: stretch; gap: 2px; }
+  .short-answer-line .label,
+  .step-card .short-answer-line .label { min-width: 0; }
+  .short-answer-line input[type="text"] { width: 100%; padding: 8px 6px; }
+  .blank-line input[type="text"] { min-width: 90px; max-width: 100%; }
+  .blank-line .first-letter + input[type="text"] { min-width: 0; width: 8.5em; }
+
+  /* --- comfortable tap targets --- */
+  .btn.small { padding: 8px 14px; }
+  .choice-group.inline .choice-btn { padding: 5px 11px; }
+  .lesson-footer-nav { gap: 10px; }
+  .lesson-footer-nav .btn { flex: 1; text-align: center; }
+
+  /* --- crossword / letter tiles: big enough to tap; the puzzle
+         scrolls sideways if it's wider than the screen. 16px text
+         stops iPhones zooming in on every box. --- */
+  .xword { --cell: 30px; overflow-x: auto; padding: 8px; -webkit-overflow-scrolling: touch; }
+  .xw-cell input, .letter-word .xw-cell input { font-size: 16px; }
+  .letter-word { --cell: 32px; }
+
+  /* --- word ↔ picture matching: words become chips that stay
+         pinned at the top while she scrolls to the pictures --- */
+  .match-grid.pic-match { gap: 14px; }
+  .match-grid.pic-match .match-col:not(.pics) {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 -16px;
+    padding: 10px 16px;
+    background: var(--card);
+    border-bottom: 2px dashed var(--ink-soft);
+  }
+  .match-grid.pic-match .match-col:not(.pics) .match-item { padding: 6px 12px; border-radius: 999px; }
+
+  .save-status { bottom: 12px; right: 12px; }
+}
