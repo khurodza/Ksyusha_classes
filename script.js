@@ -154,6 +154,134 @@ const KL = (() => {
     initChecking();
     initWordSearches(lessonId, data);
     initTimers();
+    initSurvivalGames(lessonId);
+    initTapWords();
+    initLetterTiles();
+    initCoverWords();
+  }
+
+  // ----------------------------------------------------------
+  // Survival game (Lesson 06 warm-up): <div class="surv"> with
+  // .surv-card steps, each holding one .choice-group. Buttons carry
+  // data-fb (what happens) and data-ok="1" on the good choice.
+  // The choices are saved like any choice group; hearts, feedback
+  // and "next day" are worked out from them, so a reload, another
+  // device or the teacher's view always shows the same game.
+  // ----------------------------------------------------------
+  function initSurvivalGames(lessonId) {
+    document.querySelectorAll(".surv").forEach((game) => {
+      const cards = [...game.querySelectorAll(".surv-card")];
+      const hearts = game.querySelector(".surv-hearts");
+      const day = game.querySelector(".surv-day");
+      const end = game.querySelector(".surv-end");
+      const total = cards.length;
+
+      function render() {
+        let good = 0, open = cards.length;
+        cards.forEach((card, i) => {
+          const picked = card.querySelector(".choice-btn.selected");
+          const fb = card.querySelector(".surv-fb");
+          if (!picked && open === cards.length) open = i;
+          card.hidden = i > open;
+          card.querySelectorAll(".choice-btn").forEach((b) => (b.disabled = !!picked));
+          const ok = !!picked && picked.dataset.ok === "1";
+          if (ok) good++;
+          card.classList.toggle("good", ok);
+          card.classList.toggle("bad", !!picked && !ok);
+          const text = picked ? (ok ? "💚 " : "💔 ") + picked.dataset.fb : "";
+          if (fb.textContent !== text) fb.textContent = text;
+        });
+        hearts.textContent = "💚".repeat(good) + "🤍".repeat(total - good);
+        day.textContent = open < total ? "Day " + (open + 1) + " of " + total : "Week finished!";
+        end.hidden = open < total;
+        if (open === total) {
+          end.querySelector(".surv-score").textContent = good + " / " + total;
+          end.querySelector(".surv-verdict").textContent =
+            good === total ? "Amazing! You could live without money, just like Mark Boyle! 🏆"
+            : good >= total - 2 ? "Great! You're almost as good at this as Mark. 🥈"
+            : good >= 3 ? "Not bad! But you need some lessons from Mark. 🥕"
+            : "Oh no! You really like spending money! 💸";
+        }
+      }
+
+      new MutationObserver(render).observe(game, { subtree: true, attributes: true, attributeFilter: ["class"] });
+      end.querySelector(".surv-again").addEventListener("click", () => {
+        const cleared = {};
+        game.querySelectorAll(".choice-group").forEach((g) => {
+          cleared[g.id] = "";
+          g.querySelectorAll(".choice-btn").forEach((b) => b.classList.remove("selected"));
+        });
+        saveProgress(lessonId, cleared);
+        render();
+        game.scrollIntoView({ block: "start" });
+      });
+      render();
+    });
+  }
+
+  // ----------------------------------------------------------
+  // Tap the key words: <div class="tap-words" data-text="…"
+  // data-keys="studies works"> with a hidden [data-save] input that
+  // holds the tapped word numbers ("0,2"). A .tap-show button in the
+  // same section underlines the suggested key words.
+  // ----------------------------------------------------------
+  function initTapWords() {
+    document.querySelectorAll(".tap-words").forEach((box) => {
+      const store = box.querySelector("input[type=hidden]");
+      if (!store || box.querySelector("button")) return;
+      const keys = (box.dataset.keys || "").split(" ");
+      const on = () => new Set(store.value.split(",").filter(Boolean));
+      const buttons = box.dataset.text.split(" ").map((w, i) => {
+        const b = document.createElement("button");
+        b.type = "button"; b.textContent = w;
+        if (keys.includes(w.replace(/[?.,]/g, ""))) b.classList.add("key");
+        b.addEventListener("click", () => {
+          const set = on();
+          set.has(String(i)) ? set.delete(String(i)) : set.add(String(i));
+          store.value = [...set].sort((x, y) => x - y).join(",");
+          store.dispatchEvent(new Event("input", { bubbles: true }));
+        });
+        box.appendChild(b);
+        return b;
+      });
+      const render = () => { const set = on(); buttons.forEach((b, i) => { b.classList.toggle("on", set.has(String(i))); b.setAttribute("aria-pressed", set.has(String(i))); }); };
+      store.addEventListener("input", render);
+      render();
+    });
+    document.querySelectorAll(".tap-show").forEach((btn) => btn.addEventListener("click", () => {
+      const list = btn.closest(".section").querySelectorAll(".tap-words");
+      const show = !list[0].classList.contains("show-keys");
+      list.forEach((l) => l.classList.toggle("show-keys", show));
+      btn.textContent = (show ? "Hide " : "Show ") + (btn.dataset.what || "the key words");
+    }));
+  }
+
+  // Letter tiles: <div class="clue-list-tiles" data-letters> — typing
+  // jumps to the next box of the same word, Backspace goes back.
+  function initLetterTiles() {
+    document.querySelectorAll("[data-letters] .tile-word").forEach((word) => {
+      const boxes = [...word.querySelectorAll("input")];
+      boxes.forEach((box, i) => {
+        box.addEventListener("input", (e) => { if (e.isTrusted && box.value && boxes[i + 1]) boxes[i + 1].focus(); });
+        box.addEventListener("keydown", (e) => {
+          if (e.key === "Backspace" && !box.value && boxes[i - 1]) { e.preventDefault(); boxes[i - 1].focus(); }
+        });
+        box.addEventListener("focus", () => box.select());
+      });
+    });
+  }
+
+  // Cover the words: <button class="btn small cover-btn"> right before a
+  // .match-grid.covered — the word list stays hidden until it's pressed
+  // (or until something is already matched).
+  function initCoverWords() {
+    document.querySelectorAll(".cover-btn").forEach((btn) => {
+      const section = btn.closest(".section"), grid = section && section.querySelector(".match-grid.covered");
+      if (!grid) return;
+      const open = () => { grid.classList.remove("covered"); btn.hidden = true; };
+      btn.addEventListener("click", open);
+      if (section.querySelector(".match-pair")) open();
+    });
   }
 
   // ----------------------------------------------------------

@@ -1794,6 +1794,96 @@ html:not(.watching) .hw-section .section[data-extra] { border-style: solid; }
 /* first-letter hint + its box never split across two lines */
 .fl-gap { white-space: nowrap; }
 
+/* --- survival game (Lesson 06 warm-up): one card per day --- */
+.surv { scroll-margin-top: 12px; }
+.surv-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 4px 12px; flex-wrap: wrap;
+  padding: 8px 14px; border: 2px solid var(--ink); border-radius: var(--radius-sm); background: #fbecc4;
+}
+.surv-day { font-family: 'Fraunces', serif; font-weight: 700; }
+.surv-hearts { letter-spacing: 2px; }
+.surv-card {
+  margin: 14px 0; padding: 16px; background: #fff; border: 2px solid var(--ink);
+  border-radius: var(--radius-md); box-shadow: var(--shadow);
+}
+.surv-card[hidden], .surv-end[hidden] { display: none; }
+.surv-card.good { background: #eaf6e4; }
+.surv-card.bad  { background: #fbe4e8; }
+.surv-top { display: flex; align-items: center; gap: 12px; }
+.surv-emoji { font-size: 2.2rem; line-height: 1; }
+.surv-q { margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.12rem; line-height: 1.3; }
+.surv-q small { display: block; font: 700 0.78rem 'Work Sans', sans-serif; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .05em; }
+.surv-card .choice-btn:disabled { cursor: default; }
+.surv-card .choice-btn:disabled:not(.selected) { opacity: 0.5; background: #fff; }
+.surv-card.good .choice-btn.selected { background: #4f8f3f; border-color: #4f8f3f; }
+.surv-fb { margin: 0; font-weight: 600; }
+.surv-fb:empty { display: none; }
+.surv-end { margin: 14px 0; padding: 18px 16px; text-align: center; background: var(--mustard); border: 2px solid var(--ink); border-radius: var(--radius-md); box-shadow: var(--shadow); }
+.surv-score { font-family: 'Fraunces', serif; font-weight: 700; font-size: 2.4rem; line-height: 1.1; }
+.surv-verdict { margin: 6px 0 12px; font-weight: 700; }
+
+/* long answers: one button per line */
+.choice-group.stack { flex-direction: column; align-items: stretch; }
+.choice-group.stack .choice-btn { text-align: left; border-radius: 16px; padding: 10px 14px; line-height: 1.35; }
+
+/* text that opens on the page (so she doesn't have to leave the task) */
+.peek { margin: 10px 0 16px; border: 2px solid var(--ink); border-radius: var(--radius-sm); background: #fff8d6; }
+.peek > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; }
+.peek > div { padding: 0 14px 10px; line-height: 1.6; }
+.peek p { margin: 0 0 10px; }
+
+/* adjective / fact cards: a table that stacks on the phone */
+.fact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 14px 0; }
+.fact-card { background: #fff; border: 2px solid var(--ink); border-radius: var(--radius-sm); overflow: hidden; }
+.fact-card h4 { margin: 0; padding: 8px 14px; background: #e3d5ee; border-bottom: 2px solid var(--ink); font-size: 1rem; }
+.fact-card.pink h4 { background: var(--pink); }
+.fact-row { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 8px; align-items: center; min-height: 44px; padding: 4px 14px; }
+.fact-row + .fact-row { border-top: 1px dashed var(--ink-soft); }
+.fact-row .fr-label { font-size: 0.86rem; font-weight: 600; color: var(--ink-soft); }
+.fact-row .fr-val { font-weight: 700; }
+.fact-row input[type="text"] {
+  width: 100%; min-width: 0; border: none; border-bottom: 2px solid var(--ink); border-radius: 6px 6px 0 0;
+  background: #fdf3df; font: 600 1rem 'Work Sans', sans-serif; color: var(--terracotta-dark); padding: 5px 8px;
+}
+.fr-num { display: flex; align-items: center; gap: 6px; }
+.fact-row input[type="text"]:focus { outline: none; border-bottom-color: var(--terracotta); background: #fff8ec; }
+
+/* tap the key words */
+.tap-words { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0; }
+.tap-words .tw-letter { font-weight: 700; color: var(--terracotta-dark); min-width: 18px; }
+.tap-words button {
+  min-height: 38px; padding: 4px 10px; border: 1.5px solid #cdbfae; border-radius: 10px; background: #fff;
+  font: 600 1rem 'Work Sans', sans-serif; color: var(--ink); cursor: pointer;
+}
+.tap-words button.on { background: var(--mustard); border-color: var(--ink); }
+.tap-words.show-keys button.key { border-color: #4f8f3f; box-shadow: 0 3px 0 #4f8f3f; }
+
+/* crossword clues with letter tiles (phone-friendly crossword) */
+.tile-clue { margin: 16px 0; }
+.tile-clue p { margin: 0 0 6px; font-weight: 600; }
+.tile-word { --cell: 34px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.tile-word .tw-part { display: flex; gap: 2px; }
+.tile-word input, .tile-word .given {
+  width: var(--cell); height: 38px; padding: 0; border: 1.5px solid var(--ink); border-radius: 6px; background: #fff;
+  display: grid; place-items: center; text-align: center; text-transform: uppercase;
+  font: 700 16px 'Work Sans', sans-serif; color: var(--terracotta-dark);
+}
+.tile-word .given { background: var(--mustard); color: var(--ink); }
+.tile-word .grey { background: #d9d4cd; }
+.tile-word input:focus { outline: none; box-shadow: inset 0 0 0 2px var(--terracotta); }
+
+/* photos with a word under each (picture dictionary) */
+.job-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin: 14px 0; }
+.job-gallery figure { margin: 0; text-align: center; font-weight: 600; }
+.job-gallery img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 2px solid var(--ink); border-radius: var(--radius-sm); margin-bottom: 4px; }
+
+/* cover the word list until "Show the words" is pressed */
+html:not(.watching) .match-grid.covered .match-col:not(.pics) { display: none; }
+html:not(.watching) .match-grid.covered { grid-template-columns: 1fr; }
+.match-grid.pic-match .pics .match-item { position: relative; }
+.pics-two .match-col.pics .pic-num { top: auto; bottom: 4px; left: auto; right: 4px; pointer-events: none; }
+.cover-btn[hidden] { display: none; }
+
 /* ============================================================
    PHONE LAYOUT (≤ 640px)
    The student studies on her phone, so every page must read
@@ -1881,5 +1971,39 @@ html:not(.watching) .hw-section .section[data-extra] { border-style: solid; }
   }
   .match-grid.pic-match .match-col:not(.pics) .match-item { padding: 6px 12px; border-radius: 999px; }
 
+  /* --- Lesson 06: game, cards, tiles --- */
+  .surv-card { padding: 14px 12px; }
+  .choice-group:not(.inline) .choice-btn { min-height: 42px; }
+  .choice-group.letters .choice-btn { min-width: 41px; padding: 7px 8px; }
+  .choice-group.letters { gap: 6px; }
+  .choice-group.stack .choice-btn { font-size: 0.97rem; }
+  .fact-grid { grid-template-columns: 1fr; }
+  .fact-row { grid-template-columns: 104px minmax(0, 1fr); padding: 4px 12px; }
+  .fact-row input[type="text"], .blank-line input[type="text"], .story-block input[type="text"],
+  .short-answer-line input[type="text"], textarea.free-write { font-size: 16px; }
+  .tile-word { --cell: min(30px, calc((100vw - 92px) / 11)); }
+  .job-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+  /* matched word + photo become small cards, two in a row */
+  .match-pairs:has(+ .pics-two) { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .match-pairs:has(+ .pics-two) .match-pair {
+    display: flex; flex-direction: column-reverse; gap: 4px; padding: 6px;
+    background: #d4eaf4; border: 2px solid var(--ink); border-radius: var(--radius-sm);
+  }
+  .match-pairs:has(+ .pics-two) .match-link { display: none; }
+  .match-pairs:has(+ .pics-two) .match-item { position: relative; width: 100%; padding: 0; border: none; background: none; text-align: center; font-size: 0.95rem; }
+  .match-pairs:has(+ .pics-two) .pic-num { top: auto; bottom: 2px; left: auto; right: 2px; }
+  .match-grid.pic-match.pics-two .match-col.pics { grid-template-columns: 1fr 1fr; }
+  .match-grid.pic-match.pics-two .match-col:not(.pics) .match-item { padding: 8px 11px; font-size: 0.9rem; }
+
   .save-status { bottom: 12px; right: 12px; }
+}
+
+/* three speaker portraits stay in one row on any screen */
+.photo-row.wb-speakers { flex-wrap: nowrap; }
+.photo-row.wb-speakers img { flex: 1 1 0; min-width: 0; height: auto; aspect-ratio: 4 / 5; }
+
+/* long one-sentence answers: a two-line box */
+.short-answer-line textarea {
+  flex: 1; min-width: 0; width: 100%; border: none; border-bottom: 2px solid var(--ink); border-radius: 6px 6px 0 0;
+  background: #fdf3df; font: 500 16px/1.4 'Work Sans', sans-serif; color: var(--ink); padding: 8px; resize: vertical;
 }
